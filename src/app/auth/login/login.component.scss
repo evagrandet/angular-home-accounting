@@ -1,2 +1,6 @@
 @import '../../../assets/style/_variables';
-.login {}
+.login-card {
+    &__text {
+        color: $color_grey;
+    }
+}
