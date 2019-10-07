@@ -1,10 +1,10 @@
 <section class="login-card">
     <p class="login-card__text">Войдите для работы</p>
-    <form>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
         <label for="email">Email</label>
-        <input type="text" class="login-card__input" id="email" placeholder="Введите ваш email">
+        <input type="email" class="login-card__input" id="email" placeholder="Введите ваш email" formControlName="email">
         <label for="password">Пароль</label>
-        <input type="password" class="login-card__input" id="password" placeholder="Пароль">
+        <input type="password" class="login-card__input" id="password" placeholder="Пароль" formControlName="password">
         <button type="submit" class="login-card__btn">Войти</button>
         <p class="login-card__text">
             Нет аккаунта? <a class="login-card__link" href="#">Зарегистрироваться!</a>
