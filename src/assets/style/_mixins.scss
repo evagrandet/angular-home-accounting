@@ -1,0 +1,64 @@
+@mixin clearfix {
+    &::after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+
+@mixin container {
+    width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: initial;
+    @media #{$width-tablet} {
+        width: 670px;
+        padding: 0 45px;
+    }
+    @media #{$width-desktop} {
+        width: 940px;
+        padding: 0 30px;
+    }
+}
+
+@mixin container-responsive {
+    width: 90%;
+    min-width: 270px;
+    margin: 0 auto;
+    @media #{$width-tablet} {
+        width: 94%;
+        max-width: 1105px;
+    }
+    @media #{$width-desktop} {
+        width: 1216px;
+        max-width: 1216px;
+    }
+}
+
+@mixin container-responsive-external {
+    width: 90%;
+    min-width: 270px;
+    margin: 0 auto;
+    @media #{$width-tablet} {
+        width: 94%;
+        max-width: 1105px;
+    }
+    @media #{$width-desktop-external} {
+        width: 1216px;
+        max-width: 1216px;
+    }
+}
+
+@mixin ul-reset {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+@mixin btn-reset {
+    padding: 0;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    text-align: left;
+}
