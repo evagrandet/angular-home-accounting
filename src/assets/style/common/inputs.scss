@@ -1,0 +1,8 @@
+@import '../_variables';
+@import '../_mixins';
+.inputs {
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid $color_grey2;
+}
