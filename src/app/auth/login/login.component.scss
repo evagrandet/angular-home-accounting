@@ -15,4 +15,16 @@
         font-weight: 700;
         color: $color_grey;
     }
+    &__btn {
+        @include btn-reset();
+        display: inline-block;
+        width: 270px;
+        height: 38px;
+        font-weight: 400;
+        text-align: center;
+        line-height: 15px;
+        vertical-align: middle;
+        color: $color-white;
+        background-color: $color-blue;
+    }
 }

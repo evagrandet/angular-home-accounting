@@ -5,4 +5,8 @@
     width: 100%;
     border: none;
     border-bottom: 1px solid $color_grey2;
+    &::placeholder {
+        color: lighten($color: $color-grey, $amount: 40%);
+        font-style: italic;
+    }
 }
