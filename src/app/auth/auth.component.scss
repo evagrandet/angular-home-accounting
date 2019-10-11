@@ -1,0 +1,15 @@
+@import '../../assets/style/_variables';
+@import '../../assets/style/_visually-hidden';
+.auth {
+    background-color: $color-grey3;
+    &__card {
+        display: block;
+        width: 100vw;
+        height: 100vh;
+        @media ($width-tablet) {
+            width: 450px;
+            min-height: 260px;
+            margin: 0 auto;
+        }
+    }
+}
