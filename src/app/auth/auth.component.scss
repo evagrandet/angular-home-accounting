@@ -1,16 +1,30 @@
 @import '../../assets/style/_variables';
 @import '../../assets/style/_visually-hidden';
 .auth {
+    width: 100%;
+    height: 100vh;
     background-color: $color-grey3;
     &__card {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         width: 100vw;
         height: 100vh;
         @media ($width-tablet) {
             width: 450px;
-            min-height: 260px;
+            min-height: 434px;
             margin: 0 auto;
         }
     }
-    &__logo {}
+    &__card-header {
+        display: flex;
+        width: 100%;
+        padding: 10px 20px;
+        background-color: $color_white;
+        border-bottom: 1px solid $color_blue;
+    }
+    &__card-logo {
+        display: inline-block;
+    }
 }
