@@ -27,4 +27,12 @@
     &__card-logo {
         display: inline-block;
     }
+    &__card-title {
+        margin: 25px auto;
+        font-size: 26px;
+        font-weight: 600;
+        line-height: 30px;
+        vertical-align: bottom;
+        color: $color_grey4;
+    }
 }
