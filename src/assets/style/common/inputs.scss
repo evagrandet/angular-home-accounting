@@ -9,4 +9,7 @@
         color: lighten($color: $color-grey, $amount: 40%);
         font-style: italic;
     }
+    &:focus {
+        border-bottom: 2px solid $color_blue;
+    }
 }
