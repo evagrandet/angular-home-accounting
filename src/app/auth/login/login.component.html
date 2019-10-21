@@ -1,10 +1,16 @@
 <section class="login-card">
     <p class="login-card__text">Войдите для работы</p>
-    <form [formGroup]="form" (ngSubmit)="onSubmit()">
-        <label class="login-card__label" for="email">Email</label>
-        <input type="email" class="login-card__input inputs" id="email" placeholder="Введите ваш email" formControlName="email">
-        <label class="login-card__label" for="password">Пароль</label>
-        <input type="password" class="login-card__input inputs" id="password" placeholder="Пароль" formControlName="password">
+    <form class="login-card__form" [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="login-card__wrapper">
+            <label class="login-card__label" for="email">Email</label>
+            <input type="email" [ngClass]="{'login-card__input--error' : form.get('email').invalid && form.get('email').touched}" class="login-card__input inputs" id="email" placeholder="Введите ваш email" formControlName="email">
+            <span class="login-card__error" *ngIf="form.get('email').invalid && form.get('email').touched">Необходимо ввести e-mail</span>
+        </div>
+        <div class="login-card__wrapper">
+            <label class="login-card__label" for="password">Пароль</label>
+            <input [ngClass]="{'login-card__input--error' : form.get('password').invalid && form.get('password').touched}" type="password" class="login-card__input inputs" id="password" placeholder="Пароль" formControlName="password">
+            <span class="login-card__error" *ngIf="form.get('password').invalid && form.get('password').touched">Пароль должен быть не короче шести символов!</span>
+        </div>
         <button type="submit" class="login-card__btn">Войти</button>
         <p class="login-card__text">
             Нет аккаунта? <br/> <a class="login-card__link" href="#">Зарегистрироваться!</a>
