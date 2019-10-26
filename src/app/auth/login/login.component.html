@@ -9,12 +9,14 @@
         <div class="login-card__wrapper">
             <label class="login-card__label" for="password">Пароль</label>
             <input [ngClass]="{'login-card__input--error' : form.get('password').invalid && form.get('password').touched}" type="password" class="login-card__input inputs" id="password" placeholder="Пароль" formControlName="password">
-            <span class="login-card__error" *ngIf="form.get('password').touched && form.get('password')['errors']['required']">Пароль не может быть пустым</span>
-            <span class="login-card__error" *ngIf="form.get('password').touched && form.get('password')['errors']['minlength']">Пароль должен быть не короче
-                {{ form.get('password')['errors']['minlength']['requiredLength']
-                }} символов! Сейчас введено
-                {{form.get('password')['errors']['minlength']['actualLength']}}
+            <div *ngIf="form.get('password').touched && form.get('password').invalid">
+                <span class="login-card__error" *ngIf="form.get('password')['errors']['required']">Пароль не может быть пустым</span>
+                <span class="login-card__error" *ngIf="form.get('password')['errors']['minlength']">Пароль должен быть не короче
+                    {{ form.get('password')['errors']['minlength']['requiredLength']
+                    }} символов! Сейчас введено
+                    {{form.get('password')['errors']['minlength']['actualLength']}}
                 </span>
+            </div>
         </div>
         <button type="submit" class="login-card__btn">
             Войти
