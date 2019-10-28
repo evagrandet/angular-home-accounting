@@ -18,7 +18,7 @@
                 </span>
             </div>
         </div>
-        <button type="submit" class="login-card__btn">
+        <button type="submit" class="login-card__btn" [disabled]="form.invalid" [ngClass]="{'login-card__btn--grey': form.invalid}">
             Войти
         </button>
         <p class="login-card__text">
