@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { UsersService } from 'src/app/shared/services/users.service';
+import { User } from 'src/app/shared/models/user';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +11,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class LoginComponent implements OnInit {
 
   form: FormGroup;
-  constructor() { }
+  user: User;
+  constructor(private usersService: UsersService) { }
 
   ngOnInit() {
     this.form = new FormGroup({
@@ -19,6 +22,13 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.form);
-  }
+        const formData = this.form.value;
+        return this.usersService.getUser(formData).subscribe((user) => {
+            if (user) {
+
+            } else {
+                alert('Такого пользователя нет!');
+            }
+        });
+    }
 }

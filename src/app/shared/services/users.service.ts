@@ -12,7 +12,7 @@ export class UsersService {
 
   constructor(private http: HttpClient) { }
 
-    getUser(): Observable<User[]> {
+    getUser(user): Observable<User[]> {
       return this.http.get<User[]>('http://localhost:3000/users');
   }
 }

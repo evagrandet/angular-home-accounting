@@ -72,6 +72,10 @@
         vertical-align: middle;
         color: $color-white;
         background-color: $color-blue;
+        &--grey {
+            color: $color_grey3;
+            background-color: $color_grey2;
+        }
     }
     &__link {
         text-decoration: none;
