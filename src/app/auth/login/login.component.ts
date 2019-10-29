@@ -24,11 +24,12 @@ export class LoginComponent implements OnInit {
   onSubmit() {
         const formData = this.form.value;
         return this.usersService.getUser(formData).subscribe((user) => {
-            if (user) {
-
-            } else {
-                alert('Такого пользователя нет!');
-            }
+            console.log(user)
+            // if (user.email) {
+            //     user.password ? console.log('work') : alert('Пароль неверный!');
+            // } else {
+            //     alert('Такого пользователя нет!');
+            // }
         });
     }
 }
