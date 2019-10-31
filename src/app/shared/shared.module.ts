@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AuthErrorComponent } from './components/modals/auth-error/auth-error.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [AuthErrorComponent],
   imports: [
     FormsModule,
     ReactiveFormsModule,
