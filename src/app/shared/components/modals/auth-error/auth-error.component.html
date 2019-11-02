@@ -1,3 +1,4 @@
-<section class="auth-error">
-    <span></span>
+<section class="auth-error" [ngSwitch]="true">
+    <p *ngSwitchCase="isWrongPassword" class="auth-error__text"> Неправильный пароль!</p>
+    <p *ngSwitchCase="isNotExistingUser" class="auth-error__text">Такого пользователя не существует</p>
 </section>
