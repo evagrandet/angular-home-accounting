@@ -9,10 +9,12 @@ import { User } from 'src/app/shared/models/user';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+    form: FormGroup;
+    user: User;
+    wrongPassword: boolean;
+    existingUser: boolean;
 
-  form: FormGroup;
-  user: User;
-  constructor(private usersService: UsersService) { }
+    constructor(private usersService: UsersService) { }
 
   ngOnInit() {
     this.form = new FormGroup({
@@ -24,12 +26,14 @@ export class LoginComponent implements OnInit {
   onSubmit() {
         const formData = this.form.value;
         return this.usersService.getUser(formData).subscribe((user) => {
-            console.log(user)
-            // if (user.email) {
-            //     user.password ? console.log('work') : alert('Пароль неверный!');
-            // } else {
-            //     alert('Такого пользователя нет!');
-            // }
+            console.log(user);
+            if (user.email) {
+                if (!user.password) {
+                    this.wrongPassword = true;
+                }
+            } else {
+                this.existingUser = true;
+            }
         });
     }
 }
