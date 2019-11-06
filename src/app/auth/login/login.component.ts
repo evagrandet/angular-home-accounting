@@ -17,26 +17,30 @@ export class LoginComponent implements OnInit {
 
     constructor(private usersService: UsersService) { }
 
-  ngOnInit() {
-    this.message = new Message('error', '');
+ngOnInit() {
     this.form = new FormGroup({
-      email: new FormControl(null, [Validators.required, Validators.email]),
-      password: new FormControl(null, [Validators.required, Validators.minLength(6)])
+        email: new FormControl(null, [Validators.required, Validators.email]),
+        password: new FormControl(null, [Validators.required, Validators.minLength(6)])
     });
-  }
+}
 
-  onSubmit() {
-        const formData = this.form.value;
-        return this.usersService.getUser(formData).subscribe((user) => {
-            console.log(user);
-            if (user.email) {
-                if (!user.password) {
-                    this.message.text = 'Пароль неверный';
+onSubmit() {
+    const formData = this.form.value;
+    return this.usersService.getUser(formData)
+        .subscribe((user: User) => {
+            if (user.email == formData.email) {
+
+                if (user.password !== formData.password) {
+                    alert('Пароль неверен')
+                } else {
+                    console.log(formData);
                 }
             } else {
-                this.message.text = 'Такого пользователя не существует';
+                console.log(user)
+                console.log(formData.email)
+                alert('Такого пользователя не существует!');
             }
-        });
+            });
     }
 
 }

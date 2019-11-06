@@ -1,7 +1,7 @@
 <section class="login-card">
     <p class="login-card__text">Войдите для работы</p>
-    <div class="login-card__{{message.type}}" *ngIf="message">
-        <p class="login-card__error-text"> {{message.text}} </p>
+    <div class="login-card__error" *ngIf="message?.text">
+        <p class="login-card__error-text"> {{message?.text}} </p>
     </div>
     <form class="login-card__form" [formGroup]="form" (ngSubmit)="onSubmit()">
         <div class="login-card__wrapper">
