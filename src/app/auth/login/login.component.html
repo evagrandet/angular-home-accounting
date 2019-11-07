@@ -1,9 +1,10 @@
 <section class="login-card">
     <p class="login-card__text">Войдите для работы</p>
-    <div class="login-card__error" *ngIf="message?.text">
-        <p class="login-card__error-text"> {{message?.text}} </p>
-    </div>
     <form class="login-card__form" [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="login-card__error">
+            <p class="login-card__error-text" *ngIf="!rightPassword"> Пароль не подходит! </p>
+            <p class="login-card__error-text" *ngIf="!existingUser"> Такого пользователя не существует </p>
+        </div>
         <div class="login-card__wrapper">
             <label class="login-card__label" for="email">Email</label>
             <input type="email" [ngClass]="{'login-card__input--error' : form.get('email').invalid && form.get('email').touched}" class="login-card__input inputs" id="email" placeholder="Введите ваш email" formControlName="email">

@@ -13,9 +13,12 @@ export class LoginComponent implements OnInit {
     form: FormGroup;
     user: User;
 
+    existingUser = true;
+    rightPassword = true;
+
     message: Message;
 
-    constructor(private usersService: UsersService) { }
+    constructor(private usersService: UsersService) {}
 
 ngOnInit() {
     this.form = new FormGroup({
@@ -27,18 +30,18 @@ ngOnInit() {
 onSubmit() {
     const formData = this.form.value;
     return this.usersService.getUser(formData)
-        .subscribe((user: User) => {
-            if (user.email == formData.email) {
+        .subscribe((user) => {
+            if (user.find(item => item.email === formData.email)) {
 
-                if (user.password !== formData.password) {
-                    alert('Пароль неверен')
+                if (user.find(item => item.password === formData.password)) {
+                    //
                 } else {
-                    console.log(formData);
+                    this.existingUser = true;
+                    this.rightPassword = false;
                 }
             } else {
-                console.log(user)
-                console.log(formData.email)
-                alert('Такого пользователя не существует!');
+                this.existingUser = false;
+                this.rightPassword = true;
             }
             });
     }
