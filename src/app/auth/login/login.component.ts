@@ -3,6 +3,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UsersService } from 'src/app/shared/services/users.service';
 import { User } from 'src/app/shared/models/user';
 import { Message } from 'src/app/shared/models/message';
+import { AuthService } from 'src/app/shared/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +20,7 @@ export class LoginComponent implements OnInit {
 
     message: Message;
 
-    constructor(private usersService: UsersService) {}
+    constructor(private usersService: UsersService, private authService: AuthService, private router: Router) {}
 
 ngOnInit() {
     this.form = new FormGroup({
@@ -34,7 +36,10 @@ onSubmit() {
             if (user.find(item => item.email === formData.email)) {
 
                 if (user.find(item => item.password === formData.password)) {
-                    //
+                    this.message.text = '';
+                    window.localStorage.setItem('user', JSON.stringify(user));
+                    this.authService.login();
+                    // this.router.navigate(['']);
                 } else {
                     this.existingUser = true;
                     this.rightPassword = false;
