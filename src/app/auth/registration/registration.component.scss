@@ -57,6 +57,10 @@
     }
     &__wrapper {
         min-height: 80px;
+        &--agree {
+            position: relative;
+            padding: 35px 55px 0;
+        }
     }
     &__label {
         display: block;
@@ -85,7 +89,7 @@
         display: inline-block;
         width: 100%;
         height: 38px;
-        margin: 35px auto;
+        margin: 20px auto;
         font-weight: 400;
         text-align: center;
         line-height: 15px;
@@ -101,66 +105,65 @@
         text-decoration: none;
         color: $color-blue;
     }
-    &__label {
+    &__label--lock {
         position: absolute;
-        top: calc(50% - 32px);
-        left: calc(50% - 32px);
+        bottom: 0;
+        left: 0;
         display: inline-block;
         background: #ff5b5b;
-        width: 64px;
-        height: 64px;
+        width: 45px;
+        height: 45px;
         box-sizing: border-box;
-        padding: 12px 0 0 18px;
+        padding: 7px 12px;
         border-radius: 50%;
         cursor: pointer;
-        -webkit-tap-highlight-color: transparent;
+        svg {
+            fill: none;
+            transform: translate3d(0, 0, 0);
+        }
+        svg .bling {
+            stroke: #fff;
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-dasharray: 3;
+            stroke-dashoffset: 15;
+            transition: all 0.3s ease;
+        }
+        svg .lock {
+            stroke: #fff;
+            stroke-width: 4;
+            stroke-linejoin: round;
+            stroke-linecap: round;
+            stroke-dasharray: 36;
+            transition: all 0.4s ease;
+        }
+        svg .lockb {
+            fill: #fff;
+            fill-rule: evenodd;
+            clip-rule: evenodd;
+            transform: rotate(8deg);
+            transform-origin: 14px 20px;
+            transition: all 0.2s ease;
+        }
     }
-    &__label svg {
-        fill: none;
-        transform: translate3d(0, 0, 0);
-    }
-    &__label svg .bling {
-        stroke: #fff;
-        stroke-width: 2.5;
-        stroke-linecap: round;
-        stroke-dasharray: 3;
-        stroke-dashoffset: 15;
-        transition: all 0.3s ease;
-    }
-    &__label svg .lock {
-        stroke: #fff;
-        stroke-width: 4;
-        stroke-linejoin: round;
-        stroke-linecap: round;
-        stroke-dasharray: 36;
-        transition: all 0.4s ease;
-    }
-    &__label svg .lockb {
-        fill: #fff;
-        fill-rule: evenodd;
-        clip-rule: evenodd;
-        transform: rotate(8deg);
-        transform-origin: 14px 20px;
-        transition: all 0.2s ease;
-    }
-    #inpLock {
+    #agree {
         display: none;
     }
-    #inpLock:checked+label {
+    #agree:checked+label {
         background: #20cca5;
     }
-    #inpLock:checked+label svg {
+    #agree:checked+label svg {
         opacity: 1;
     }
-    #inpLock:checked+label svg .bling {
+    #agree:checked+label svg .bling {
         animation: bling 0.3s linear forwards;
         animation-delay: 0.2s;
     }
-    #inpLock:checked+label svg .lock {
+    #agree:checked+label svg .lock {
         stroke-dasharray: 48;
         animation: locked 0.3s linear forwards;
     }
-    #inpLock:checked+label svg .lockb {
+    #agree:checked+label svg .lockb {
         transform: rotate(0);
         transform-origin: 14px 22px;
     }
