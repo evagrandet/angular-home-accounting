@@ -1,8 +1,6 @@
 @import '../../assets/style/_variables';
 @import '../../assets/style/_visually-hidden';
 .auth {
-    width: 100%;
-    height: 100vh;
     background-color: $color-grey3;
     &__card {
         display: flex;
