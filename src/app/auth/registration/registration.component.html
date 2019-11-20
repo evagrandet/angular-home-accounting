@@ -4,16 +4,19 @@
         <div class="registration__wrapper">
             <label class="registration__label" for="email">Email</label>
             <input type="email" class="inputs registration__input" id="email" placeholder="Введите email" formControlName="email">
+            <span *ngIf="form.get('email').touched && form.get('email').invalid" class="registration__message registration__message--error">Error message.</span>
         </div>
         <div class="registration__wrapper">
             <label class="registration__label" for="password">Пароль</label>
             <input type="password" class="inputs registration__input" id="password" placeholder="Введите пароль" formControlName="password">
-            <span class="registration__error">Error message.</span>
+            <span *ngIf="form.get('password').touched && form.get('password').valid" class="registration__message registration__message--success">Success message.</span>
+            <span *ngIf="form.get('password').touched && form.get('password').invalid" class="registration__message registration__message--error">Error message.</span>
         </div>
         <div class="registration__wrapper">
             <label class="registration__label" for="name">Имя</label>
             <input type="text" class="inputs registration__input" id="name" placeholder="Введите имя" formControlName="name">
-            <span class="registration__success">Success message.</span>
+            <span *ngIf="form.get('name').touched && form.get('name').valid" class="registration__message registration__message--success">Success message.</span>
+            <span *ngIf="form.get('name').touched && form.get('name').invalid" class="registration__message registration__message--error">Error message.</span>
         </div>
         <div class="registration__wrapper registration__wrapper--agree">
             <input class="registration__checkbox" id="agree" type="checkbox" formControlName="agree">
