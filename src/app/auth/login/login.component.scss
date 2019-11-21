@@ -72,7 +72,7 @@
         vertical-align: middle;
         color: $color-white;
         background-color: $color-blue;
-        &--grey {
+        &:disabled {
             color: $color_grey3;
             background-color: $color_grey2;
         }
