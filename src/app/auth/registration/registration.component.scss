@@ -75,14 +75,19 @@
             animation: errorInput 1s;
         }
     }
-    &__checkbox {
-        margin-right: 10px;
-    }
-    &__error {
+    &__message {
         position: relative;
         top: -3px;
         font-size: 10px;
-        color: $color_red;
+        &--error {
+            color: $color_red;
+        }
+        &--success {
+            color: $color_green;
+        }
+    }
+    &__checkbox {
+        margin-right: 10px;
     }
     &__btn {
         @include btn-reset();
