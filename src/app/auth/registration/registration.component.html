@@ -34,7 +34,7 @@
             <span class="registration__text">Согласен с правилами</span>
         </div>
         <div class="registration__wrapper">
-            <button type="submit" class="registration__btn">Зарегистрироваться</button>
+            <button type="submit" class="registration__btn" [disabled]="form.invalid">Зарегистрироваться</button>
         </div>
         <p class="registration__text">
             Уже есть аккаунт?
