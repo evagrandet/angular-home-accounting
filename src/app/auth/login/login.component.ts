@@ -19,8 +19,6 @@ export class LoginComponent implements OnInit {
     rightPassword = true;
     nowCanLogin = false;
 
-    message: Message;
-
     constructor(
         private usersService: UsersService,
         private authService: AuthService,
@@ -48,7 +46,6 @@ onSubmit() {
             if (user.find(item => item.email === formData.email)) {
 
                 if (user.find(item => item.password === formData.password)) {
-                    this.message.text = '';
                     window.localStorage.setItem('user', JSON.stringify(user));
                     this.authService.login();
                     // this.router.navigate(['']);
