@@ -4,7 +4,7 @@ import { UsersService } from 'src/app/shared/services/users.service';
 import { User } from 'src/app/shared/models/user';
 import { Message } from 'src/app/shared/models/message';
 import { AuthService } from 'src/app/shared/services/auth.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -17,12 +17,24 @@ export class LoginComponent implements OnInit {
 
     existingUser = true;
     rightPassword = true;
+    nowCanLogin = false;
 
     message: Message;
 
-    constructor(private usersService: UsersService, private authService: AuthService, private router: Router) {}
+    constructor(
+        private usersService: UsersService,
+        private authService: AuthService,
+        private router: Router,
+        private route: ActivatedRoute
+    ) {}
 
 ngOnInit() {
+    this.route.queryParams
+        .subscribe((params: Params) => {
+            if (params['nowCanLogin']) {
+                this.nowCanLogin = true;
+            }
+        });
     this.form = new FormGroup({
         email: new FormControl(null, [Validators.required, Validators.email]),
         password: new FormControl(null, [Validators.required, Validators.minLength(6)])
