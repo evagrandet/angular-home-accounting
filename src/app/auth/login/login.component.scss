@@ -81,4 +81,22 @@
         text-decoration: none;
         color: $color-blue;
     }
+    &__message {
+        margin: 10px auto;
+        border-radius: 5px;
+        &--error {
+            border: 2px solid $color_red;
+        }
+        &--success {
+            border: 2px solid $color_green;
+        }
+    }
+    &__error-text {
+        text-align: center;
+        color: $color_red;
+    }
+    &__success-text {
+        text-align: center;
+        color: $color_green;
+    }
 }
