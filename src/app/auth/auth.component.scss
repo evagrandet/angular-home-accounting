@@ -1,7 +1,10 @@
-@import '../../assets/style/_variables';
+@import '../../assets/style/variables';
 @import '../../assets/style/_visually-hidden';
 .auth {
-    background-color: $color-grey3;
+    background-color: $color_white;
+    @media ($width-tablet) {
+        background-color: $color-grey3;
+    }
     &__card {
         display: flex;
         flex-direction: column;
@@ -17,20 +20,28 @@
     }
     &__card-header {
         display: flex;
+        flex-direction: column;
+        align-items: center;
         width: 100%;
         padding: 10px 20px;
         background-color: $color_white;
         border-bottom: 1px solid $color_blue;
+        @media ($width-tablet) {
+            flex-direction: row;
+        }
     }
     &__card-logo {
         display: inline-block;
     }
     &__card-title {
         margin: 25px auto;
-        font-size: 26px;
+        font-size: 24px;
         font-weight: 600;
         line-height: 30px;
         vertical-align: bottom;
         color: $color_grey4;
+        @media ($width-tablet) {
+            font-size: 26px;
+        }
     }
 }

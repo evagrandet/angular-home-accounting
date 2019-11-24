@@ -1,9 +1,9 @@
 // media
-$width-mobile: '(max-width: 767px)';
-$width-tablet: '(min-width: 768px)';
-$width-tablet-only: '(min-width: 768px) and (max-width: 1189px)';
-$width-desktop: '(min-width: 1190px)';
-$width-desktop-external: '(min-width: 1218px)';
+$width-mobile: 'max-width: 767px';
+$width-tablet: 'min-width: 768px';
+$width-tablet-only: 'min-width: 768px and max-width: 1189px';
+$width-desktop: 'min-width: 1190px';
+$width-desktop-external: 'min-width: 1218px';
 $retina-dpi: 144dpi;
 $retina-dppx: 1.5dppx;
 //colors
