@@ -4,7 +4,11 @@
         <div class="registration__wrapper">
             <label class="registration__label" for="email">Email</label>
             <input [ngClass]="{'registration__input--error' : form.get('email').touched && form.get('email').invalid}" type="email" class="inputs registration__input" id="email" placeholder="Введите email" formControlName="email">
-            <span *ngIf="form.get('email').touched && form.get('email').invalid" class="registration__message registration__message--error">Необходимо ввести e-mail!</span>
+            <div *ngIf="form.get('email').touched && form.get('email').invalid">
+                <span *ngIf="form.get('email')['errors']['required']" class="registration__message registration__message--error">Необходимо ввести e-mail!</span>
+                <span *ngIf="form.get('email')['errors']['email']" class="registration__message registration__message--error">Некорректный e-mail!</span>
+                <span *ngIf="form.get('email')['errors']['forbiddenEmail']" class="registration__message registration__message--error">Пользователь с таким E-mail уже существует</span>
+            </div>
         </div>
         <div class="registration__wrapper">
             <label class="registration__label" for="password">Пароль</label>
