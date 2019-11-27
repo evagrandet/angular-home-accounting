@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
 ngOnInit() {
     this.route.queryParams
         .subscribe((params: Params) => {
-            if (params['nowCanLogin']) {
+            if (params.nowCanLogin) {
                 this.nowCanLogin = true;
             }
         });
@@ -43,6 +43,7 @@ onSubmit() {
     const formData = this.form.value;
     return this.usersService.getUser(formData)
         .subscribe((user) => {
+            console.log(user);
             if (user.find(item => item.email === formData.email)) {
 
                 if (user.find(item => item.password === formData.password)) {

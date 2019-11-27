@@ -15,8 +15,8 @@ export class UsersService {
     getUser(user): Observable<any> {
       return this.http.get<User[]>('http://localhost:3000/users');
   }
-    getUserByEmail(email: string): Observable<any> {
-        return this.http.get(`http://localhost:3000/users?email=${'email'}`);
+    getUserByEmail(email: string): Observable<User> {
+        return this.http.get<User>(`http://localhost:3000/users?email=${email}`);
     }
 
   createUser(user): Observable<any> {
