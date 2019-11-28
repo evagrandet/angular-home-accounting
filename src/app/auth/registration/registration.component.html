@@ -12,7 +12,7 @@
         </div>
         <div class="registration__wrapper">
             <label class="registration__label" for="password">Пароль</label>
-            <input [ngClass]="{'registration__input--error' : form.get('password').touched && form.get('password').invalid}" type="password" class="inputs registration__input" id="password" placeholder="Введите пароль" formControlName="password">
+            <input [ngClass]="{'registration__input--error' : form.get('password').touched && form.get('password').invalid}" type="password" class="inputs registration__input" id="password" placeholder="Введите пароль" formControlName="password" autocomplete="true">
             <span *ngIf="form.get('password').touched && form.get('password').valid" class="registration__message registration__message--success">Пароль корректной длины</span>
             <div *ngIf="form.get('password').touched && form.get('password').invalid">
                 <span class="registration__message registration__message--error" *ngIf="form.get('password')['errors']['required']">Пароль не может быть пустым</span>

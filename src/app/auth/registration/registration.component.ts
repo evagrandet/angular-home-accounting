@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 
 import { UsersService } from 'src/app/shared/services/users.service';
 import { User } from 'src/app/shared/models/user';
+import { tap } from 'rxjs/operators';
 
 
 @Component({
@@ -41,14 +42,14 @@ export class RegistrationComponent implements OnInit {
 
   forbiddenEmails(control: FormControl): Promise<any> {
     return new Promise((resolve, reject) => {
-      this.usersService.getUserByEmail(control.value).subscribe((user: User) => {
-        console.log(user);
-        if (user.email === this.form.value.email) {
+      this.usersService.getUserByEmail(control.value).pipe(
+          tap((user: User) => {
+        if (user) {
             resolve({forbiddenEmail: true});
         } else {
           resolve(null);
         }
-      });
+      }));
     });
   }
 
