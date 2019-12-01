@@ -1,0 +1,88 @@
+@import '../../assets/style/variables';
+@import '../../assets/style/mixins';
+@import '../../assets/style/_visually-hidden';
+.system {
+    display: block;
+    width: 100vw;
+    height: 100%;
+    @media ($width-tablet) {}
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100vw;
+        height: 50px;
+        padding: 0 20px;
+        background-color: $header_color;
+    }
+    &__header-menu {
+        @include btn-reset();
+        position: relative;
+        width: 30px;
+        height: 3px;
+        background-color: $header_text_color;
+        border: none;
+        outline: none;
+        &:before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 0;
+            width: 30px;
+            height: 3px;
+            background-color: $header_text_color;
+            cursor: pointer;
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 0;
+            width: 30px;
+            height: 3px;
+            background-color: $header_text_color;
+            cursor: pointer;
+        }
+        &--closed {
+            transform: rotate(45deg);
+            &:before {
+                top: 0;
+                left: 0;
+                transform: rotate(-90deg);
+            }
+            &:after {
+                display: none;
+            }
+        }
+    }
+    &__header-user {
+        @include btn-reset();
+        position: relative;
+        width: 40px;
+        height: 30px;
+        background-image: url(../../assets/img/user.svg);
+        background-repeat: no-repeat;
+        background-position: 0 center;
+        &:after {
+            content: '';
+            position: absolute;
+            top: 14px;
+            right: -5px;
+            display: inline-block;
+            margin: 0 5px;
+            width: 0;
+            height: 0;
+            vertical-align: middle;
+            border-top: solid 5px $main_accent;
+            border-left: solid 5px transparent;
+            border-right: solid 5px transparent;
+            transform: rotate(180deg);
+            transition: transform 0.3s linear;
+        }
+        &--closed {
+            &::after {
+                transform: rotate(0deg);
+            }
+        }
+    }
+}

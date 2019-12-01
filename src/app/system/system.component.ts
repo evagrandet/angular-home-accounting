@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SystemComponent implements OnInit {
 
+    isOpenMobileMenu = false;
+    isOpenUserMenu = false;
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  toggleMobileMenu() {
+      this.isOpenMobileMenu = !this.isOpenMobileMenu;
+  }
+    toggleUserMenu() {
+        this.isOpenUserMenu = !this.isOpenUserMenu;
+    }
 }
