@@ -1,14 +1,20 @@
 <main class="system">
     <header class="system__header">
-        <button class="system__header-menu" [ngClass]="{'system__header-menu--closed': isOpenMobileMenu}" aria-label="Кнопка открытия меню" (click)="toggleMobileMenu()"></button>
+        <button class="system__header-menu" [ngClass]="{'system__header-menu--closed' : isOpenMobileMenu}" aria-label="Кнопка открытия меню" (click)="toggleMobileMenu()"></button>
         <a href="/">
             <img class="auth__card-logo" src="../../assets/img/logo.svg" width="40" heigh="40" alt="Логотип Домашней бухгалтерии">
         </a>
         <button class="system__header-user" [ngClass]="{'system__header-user--closed': isOpenUserMenu}" aria-label="Кнопка открытия меню" (click)="toggleUserMenu()"></button>
+        <nav class="system__header-nav" [ngClass]="{'system__header-nav--open' : isOpenUserMenu}">
+            <a class="system__header-link" href="/">Выход</a>
+        </nav>
     </header>
-    <aside class="system__aside">
+    <aside class="system__aside" [ngClass]="{'system__aside--open' : isOpenMobileMenu}">
         <ul class="system__aside-list">
-
+            <li class="system__aside-item">Счёт</li>
+            <li class="system__aside-item">История</li>
+            <li class="system__aside-item">Планирование</li>
+            <li class="system__aside-item">Запись</li>
         </ul>
     </aside>
     <section class="system__section">

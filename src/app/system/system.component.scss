@@ -7,6 +7,7 @@
     height: 100%;
     @media ($width-tablet) {}
     &__header {
+        position: relative;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -83,6 +84,59 @@
             &::after {
                 transform: rotate(0deg);
             }
+        }
+    }
+    &__header-nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        display: block;
+        width: 100vw;
+        height: auto;
+        background-color: $header_color;
+        transform: translateY(-50px);
+        transition: transform 0.2s linear;
+        &--open {
+            transform: translateY(50px);
+            transition: transform 0.2s linear;
+        }
+    }
+    &__header-link {
+        display: block;
+        padding: 10px 20px;
+        text-decoration: none;
+        color: $header_text_color;
+        &:hover,
+        &:active,
+        &:focus {
+            background-color: darken($color: ($header_color), $amount: 10%)
+        }
+    }
+    &__aside {
+        position: relative;
+        z-index: -1;
+        display: block;
+        width: 100vw;
+        height: auto;
+        background-color: $header_color;
+        transform: translateY(-100%);
+        transition: transform 0.2s linear;
+        &--open {
+            transform: translateY(0);
+            transition: transform 0.2s linear;
+        }
+    }
+    &__aside-list {
+        @include ul-reset;
+    }
+    &__aside-item {
+        display: block;
+        padding: 10px 20px;
+        &:hover,
+        &:active,
+        &:focus {
+            background-color: darken($color: ($header_color), $amount: 10%)
         }
     }
 }
