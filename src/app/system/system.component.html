@@ -6,6 +6,8 @@
         </a>
         <button class="system__header-user" [ngClass]="{'system__header-user--closed': isOpenUserMenu}" aria-label="Кнопка открытия меню" (click)="toggleUserMenu()"></button>
         <nav class="system__header-nav" [ngClass]="{'system__header-nav--open' : isOpenUserMenu}">
+            <input class="system__header-checkbox" type="checkbox" [checked]="isDarkTheme" id="dark-mode">
+            <label for="dark-mode">Включить тёмную тему</label>
             <a class="system__header-link" href="/">Выход</a>
         </nav>
     </header>
@@ -18,6 +20,7 @@
         </ul>
     </aside>
     <section class="system__section">
+        <h1 class="visually-hidden">Домашняя бухгалтерия</h1>
         <router-outlet></router-outlet>
     </section>
 </main>
