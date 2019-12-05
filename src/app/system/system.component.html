@@ -2,7 +2,7 @@
     <header class="system__header">
         <button class="system__header-menu" [ngClass]="{'system__header-menu--closed' : isOpenMobileMenu}" aria-label="Кнопка открытия меню" (click)="toggleMobileMenu()"></button>
         <a href="/">
-            <img class="auth__card-logo" src="../../assets/img/logo.svg" width="40" heigh="40" alt="Логотип Домашней бухгалтерии">
+            <img class="system__header-logo" src="../../assets/img/logo.svg" width="40" heigh="40" alt="Логотип Домашней бухгалтерии">
         </a>
         <button class="system__header-user" [ngClass]="{'system__header-user--closed': isOpenUserMenu}" aria-label="Кнопка открытия меню" (click)="toggleUserMenu()"></button>
         <nav class="system__header-nav" [ngClass]="{'system__header-nav--open' : isOpenUserMenu}">

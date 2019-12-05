@@ -20,8 +20,10 @@
         padding: 0 20px;
         background-color: $header_color;
         @media ($width-desktop) {
-            grid-column: 2 / 3;
+            grid-column: 1 / 3;
             grid-row: 1 / 2;
+            height: 70px;
+            padding: 0;
         }
     }
     &__header-menu {
@@ -67,6 +69,11 @@
             display: none;
         }
     }
+    &__header-logo {
+        @media ($width-desktop) {
+            margin: 50px;
+        }
+    }
     &__header-user {
         @include btn-reset();
         position: relative;
@@ -96,6 +103,9 @@
                 transform: rotate(0deg);
             }
         }
+        @media ($width-desktop) {
+            margin: 50px;
+        }
     }
     &__header-nav {
         position: absolute;
@@ -108,9 +118,19 @@
         background-color: $header_color;
         transform: translateY(-50px);
         transition: transform 0.2s linear;
+        @media ($width-desktop) {
+            right: 50px;
+            left: auto;
+            width: 250px;
+            height: 70px;
+            transform: translateY(-70px);
+        }
         &--open {
             transform: translateY(50px);
             transition: transform 0.2s linear;
+            @media ($width-desktop) {
+                transform: translateY(70px);
+            }
         }
     }
     &__header-link {
