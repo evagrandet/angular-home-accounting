@@ -1,0 +1,12 @@
+<header class="header">
+    <button class="header__menu" [ngClass]="{'header-menu--closed' : isOpenMobileMenu}" aria-label="Кнопка открытия меню" (click)="toggleMobileMenu()"></button>
+    <a href="/">
+        <img class="header__logo" src="../../assets/img/logo.svg" width="40" heigh="40" alt="Логотип Домашней бухгалтерии">
+    </a>
+    <button class="header__user" [ngClass]="{'header-user--closed': isOpenUserMenu}" aria-label="Кнопка открытия меню" (click)="toggleUserMenu()"></button>
+    <nav class="header__nav" [ngClass]="{'header-nav--open' : isOpenUserMenu}">
+        <input class="header__checkbox" type="checkbox" [checked]="isDarkTheme" id="dark-mode">
+        <label for="dark-mode">Включить тёмную тему</label>
+        <a class="header__link" href="/">Выход</a>
+    </nav>
+</header>

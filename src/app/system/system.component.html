@@ -1,22 +1,11 @@
 <main class="system">
-    <header class="system__header">
-        <button class="system__header-menu" [ngClass]="{'system__header-menu--closed' : isOpenMobileMenu}" aria-label="Кнопка открытия меню" (click)="toggleMobileMenu()"></button>
-        <a href="/">
-            <img class="system__header-logo" src="../../assets/img/logo.svg" width="40" heigh="40" alt="Логотип Домашней бухгалтерии">
-        </a>
-        <button class="system__header-user" [ngClass]="{'system__header-user--closed': isOpenUserMenu}" aria-label="Кнопка открытия меню" (click)="toggleUserMenu()"></button>
-        <nav class="system__header-nav" [ngClass]="{'system__header-nav--open' : isOpenUserMenu}">
-            <input class="system__header-checkbox" type="checkbox" [checked]="isDarkTheme" id="dark-mode">
-            <label for="dark-mode">Включить тёмную тему</label>
-            <a class="system__header-link" href="/">Выход</a>
-        </nav>
-    </header>
+    <app-header></app-header>
     <aside class="system__aside" [ngClass]="{'system__aside--open' : isOpenMobileMenu}">
         <ul class="system__aside-list">
             <li class="system__aside-item system__aside-item--bill">Счёт</li>
             <li class="system__aside-item system__aside-item--history">История</li>
             <li class="system__aside-item system__aside-item--planning">Планирование</li>
-            <li class="system__aside-item system__aside-item--record">Запись</li>
+            <li class="system__aside-item system__aside-item--add">Запись</li>
         </ul>
     </aside>
     <section class="system__section">

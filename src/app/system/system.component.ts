@@ -10,20 +10,12 @@ import { User } from '../shared/models/user';
 })
 export class SystemComponent implements OnInit {
 
-    isOpenMobileMenu = false;
-    isOpenUserMenu = false;
-    isDarkTheme: boolean;
-    user: User;
+
 
   constructor(private usersService: UsersService) { }
 
   ngOnInit() {
   }
 
-  toggleMobileMenu() {
-      this.isOpenMobileMenu = !this.isOpenMobileMenu;
-  }
-    toggleUserMenu() {
-        this.isOpenUserMenu = !this.isOpenUserMenu;
-    }
+
 }
