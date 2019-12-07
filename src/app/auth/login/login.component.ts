@@ -49,7 +49,7 @@ onSubmit() {
                 if (user.find(item => item.password === formData.password)) {
                     window.localStorage.setItem('user', JSON.stringify(user));
                     this.authService.login();
-                    // this.router.navigate(['']);
+                    this.router.navigate(['/system/bill']);
                 } else {
                     this.existingUser = true;
                     this.rightPassword = false;
