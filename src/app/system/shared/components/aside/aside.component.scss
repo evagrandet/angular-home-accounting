@@ -1,0 +1,66 @@
+@import '../../../../../assets/style/_variables';
+@import '../../../../../assets/style/mixins';
+@import '../../../../../assets/style/_visually-hidden';
+.aside {
+    position: relative;
+    z-index: -1;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: $header_color;
+    transform: translateY(-100%);
+    transition: transform 0.2s linear;
+    &--open {
+        transform: translateY(0);
+        transition: transform 0.2s linear;
+    }
+    @media ($width-desktop) {
+        position: static;
+        transform: none;
+        transition: none;
+    }
+    &__list {
+        @include ul-reset;
+    }
+    &__list-item {
+        position: relative;
+        display: block;
+        padding: 10px 50px;
+        &:hover,
+        &:active,
+        &:focus {
+            background-color: darken($color: ($header_color), $amount: 10%)
+        }
+        &:before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            width: 20px;
+            height: 20px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 20px 20px;
+        }
+        &--bill {
+            &::before {
+                background-image: url('/assets/img/bill.svg');
+            }
+        }
+        &--history {
+            &::before {
+                background-image: url('/assets/img/history.svg');
+            }
+        }
+        &--planning {
+            &::before {
+                background-image: url('/assets/img/planning.svg');
+            }
+        }
+        &--add {
+            &::before {
+                background-image: url('/assets/img/add.svg');
+            }
+        }
+    }
+}
