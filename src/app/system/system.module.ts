@@ -9,6 +9,7 @@ import { PlanningPageComponent } from './planning-page/planning-page.component';
 import { RecordsPageComponent } from './records-page/records-page.component';
 import { SharedModule } from '../shared/shared.module';
 import { HeaderComponent } from './shared/components/header/header.component';
+import { AsideComponent } from './shared/components/aside/aside.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { HeaderComponent } from './shared/components/header/header.component';
       PlanningPageComponent,
       RecordsPageComponent,
       HeaderComponent,
+      AsideComponent,
     ],
   imports: [
     CommonModule,

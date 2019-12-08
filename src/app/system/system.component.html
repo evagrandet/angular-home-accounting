@@ -1,13 +1,6 @@
 <main class="system">
-    <app-header></app-header>
-    <aside class="system__aside" [ngClass]="{'system__aside--open' : isOpenMobileMenu}">
-        <ul class="system__aside-list">
-            <li class="system__aside-item system__aside-item--bill">Счёт</li>
-            <li class="system__aside-item system__aside-item--history">История</li>
-            <li class="system__aside-item system__aside-item--planning">Планирование</li>
-            <li class="system__aside-item system__aside-item--add">Запись</li>
-        </ul>
-    </aside>
+    <app-header class="system__header"></app-header>
+    <app-aside class="system__aside"></app-aside>
     <section class="system__section">
         <h1 class="visually-hidden">Домашняя бухгалтерия</h1>
         <router-outlet></router-outlet>
