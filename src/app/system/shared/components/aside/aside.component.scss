@@ -18,6 +18,7 @@
         position: static;
         transform: none;
         transition: none;
+        background-color: $aside_color;
     }
     &__list {
         @include ul-reset;
@@ -26,10 +27,20 @@
         position: relative;
         display: block;
         padding: 10px 50px;
-        &:hover,
-        &:active,
         &:focus {
-            background-color: darken($color: ($header_color), $amount: 10%)
+            color: $aside_text_color;
+        }
+        &:hover {
+            color: $aside_text_color;
+            background-color: darken($aside_color, 10%);
+        }
+        &:active {
+            color: $aside_text_color;
+            background-color: $aside_active_color;
+        }
+        &--active {
+            color: $aside_text_color;
+            background-color: $aside_active_color;
         }
         &:before {
             content: '';
@@ -65,5 +76,9 @@
                 background-image: url('/assets/img/add.svg');
             }
         }
+    }
+    &__item-link {
+        color: rgba($aside_text_color, 0.5);
+        text-decoration: none;
     }
 }
