@@ -38,10 +38,6 @@
             color: $aside_text_color;
             background-color: $aside_active_color;
         }
-        &--active {
-            color: $aside_text_color;
-            background-color: $aside_active_color;
-        }
         &:before {
             content: '';
             position: absolute;
@@ -74,6 +70,13 @@
         &--add {
             &::before {
                 background-image: url('/assets/img/add.svg');
+            }
+        }
+        &--active {
+            color: $aside_text_color;
+            background-color: $aside_active_color;
+            .aside__item-link {
+                color: rgba($aside_text_color, 1);
             }
         }
     }

@@ -1,16 +1,16 @@
 <aside class="aside" [ngClass]="{'aside--open' : isOpenMobileMenu}">
     <ul class="aside__list">
-        <li class="aside__list-item aside__list-item--bill">
-            <a routerLink="" [routerLinkActive]="'aside__item-link--active'" class="aside__item-link">Счёт</a>
+        <li class="aside__list-item aside__list-item--bill" [routerLinkActive]="'aside__list-item--active'">
+            <a [routerLink]="['/system', 'bill']" class="aside__item-link">Счёт</a>
         </li>
-        <li class="aside__list-item aside__list-item--history">
-            <a routerLink="" [routerLinkActive]="'aside__item-link--active'" class="aside__item-link">История</a>
+        <li class="aside__list-item aside__list-item--history" [routerLinkActive]="'aside__list-item--active'">
+            <a [routerLink]="['/system', 'history']" class="aside__item-link">История</a>
         </li>
-        <li class="aside__list-item aside__list-item--planning">
-            <a routerLink="" [routerLinkActive]="'aside__item-link--active'" class="aside__item-link">Планирование</a>
+        <li class="aside__list-item aside__list-item--planning" [routerLinkActive]="'aside__list-item--active'">
+            <a [routerLink]="['/system', 'planning']" class="aside__item-link">Планирование</a>
         </li>
-        <li class="aside__list-item aside__list-item--add">
-            <a routerLink="" [routerLinkActive]="'aside__item-link--active'" class="aside__item-link">Запись</a>
+        <li class="aside__list-item aside__list-item--add" [routerLinkActive]="'aside__list-item--active'">
+            <a [routerLink]="['/system', 'records']" class="aside__item-link">Запись</a>
         </li>
     </ul>
 </aside>
