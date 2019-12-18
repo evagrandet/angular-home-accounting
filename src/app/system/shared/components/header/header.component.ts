@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { User } from 'src/app/shared/models/user';
+import { AuthService } from 'src/app/shared/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -7,20 +9,24 @@ import { User } from 'src/app/shared/models/user';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-    isOpenMobileMenu = false;
+    @Output() isOpenMobileMenu = false;
     isOpenUserMenu = false;
     isDarkTheme: boolean;
     user: User;
 
-  constructor() { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
   }
 
       toggleMobileMenu() {
       this.isOpenMobileMenu = !this.isOpenMobileMenu;
-  }
+    }
     toggleUserMenu() {
         this.isOpenUserMenu = !this.isOpenUserMenu;
+    }
+    onLogout() {
+        this.authService.logout();
+        this.router.navigate(['/login']);
     }
 }

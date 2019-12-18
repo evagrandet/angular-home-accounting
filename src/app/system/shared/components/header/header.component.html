@@ -7,6 +7,6 @@
     <nav class="header__nav" [ngClass]="{'header__nav--open' : isOpenUserMenu}">
         <input class="header__checkbox" type="checkbox" [checked]="isDarkTheme" id="dark-mode">
         <label for="dark-mode">Включить тёмную тему</label>
-        <a class="header__link" href="/">Выход</a>
+        <a class="header__link" (click)="onLogout()">Выход</a>
     </nav>
 </header>
