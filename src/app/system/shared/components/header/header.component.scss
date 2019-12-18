@@ -8,7 +8,7 @@
     align-items: center;
     width: 100%;
     height: 100%;
-    padding: 0 20px;
+    padding: 5px 20px;
     background-color: $header_color;
     @media ($width-desktop) {
         padding: 0;
@@ -58,7 +58,9 @@
     }
     &__logo {
         @media ($width-desktop) {
-            margin: 50px;
+            position: relative;
+            z-index: 2;
+            margin-left: 20px;
         }
     }
     &__user-menu {
@@ -103,7 +105,7 @@
         width: 100vw;
         height: auto;
         background-color: $header_color;
-        transform: translateY(-50px);
+        transform: translateY(-53px);
         transition: transform 0.2s linear;
         @media ($width-desktop) {
             right: 50px;
@@ -113,6 +115,7 @@
             transform: translateY(-70px);
         }
         &--open {
+            z-index: 1;
             transform: translateY(50px);
             transition: transform 0.2s linear;
             @media ($width-desktop) {
@@ -125,6 +128,7 @@
         padding: 10px 20px;
         text-decoration: none;
         color: $header_text_color;
+        cursor: pointer;
         &:hover,
         &:active,
         &:focus {

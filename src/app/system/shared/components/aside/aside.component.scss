@@ -15,7 +15,8 @@
         transition: transform 0.2s linear;
     }
     @media ($width-desktop) {
-        position: static;
+        z-index: 1;
+        padding-top: 70px;
         transform: none;
         transition: none;
         background-color: $aside_color;
