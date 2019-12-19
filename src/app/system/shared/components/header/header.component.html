@@ -5,8 +5,10 @@
     </a>
     <button class="header__user-menu" [ngClass]="{'header__user-menu--closed': isOpenUserMenu}" aria-label="Кнопка открытия меню" (click)="toggleUserMenu()"></button>
     <nav class="header__nav" [ngClass]="{'header__nav--open' : isOpenUserMenu}">
-        <input class="header__checkbox" type="checkbox" [checked]="isDarkTheme" id="dark-mode">
-        <label for="dark-mode">Включить тёмную тему</label>
+        <label class="header__label" for="dark-mode">
+            <input class="header__checkbox" type="checkbox" [checked]="isDarkTheme" id="dark-mode">
+            Включить тёмную тему
+        </label>
         <a class="header__link" (click)="onLogout()">Выход</a>
     </nav>
 </header>
