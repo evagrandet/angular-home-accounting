@@ -10,6 +10,7 @@ import { RecordsPageComponent } from './records-page/records-page.component';
 import { SharedModule } from '../shared/shared.module';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { AsideComponent } from './shared/components/aside/aside.component';
+import { BillCardComponent } from './bill-page/bill-card/bill-card.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { AsideComponent } from './shared/components/aside/aside.component';
       RecordsPageComponent,
       HeaderComponent,
       AsideComponent,
+      BillCardComponent,
     ],
   imports: [
     CommonModule,
