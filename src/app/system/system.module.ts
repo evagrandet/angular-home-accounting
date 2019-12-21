@@ -11,6 +11,7 @@ import { SharedModule } from '../shared/shared.module';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { AsideComponent } from './shared/components/aside/aside.component';
 import { BillCardComponent } from './bill-page/bill-card/bill-card.component';
+import { CurrencyCardComponent } from './bill-page/currency-card/currency-card.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { BillCardComponent } from './bill-page/bill-card/bill-card.component';
       HeaderComponent,
       AsideComponent,
       BillCardComponent,
+      CurrencyCardComponent,
     ],
   imports: [
     CommonModule,
