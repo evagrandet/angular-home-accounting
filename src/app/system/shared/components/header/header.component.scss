@@ -106,6 +106,7 @@
         height: auto;
         background-color: $header_color;
         transform: translateY(-53px);
+        opacity: 0;
         transition: transform 0.2s linear;
         @media ($width-desktop) {
             right: 50px;
@@ -117,6 +118,7 @@
         &--open {
             z-index: 1;
             transform: translateY(50px);
+            opacity: 1;
             transition: transform 0.2s linear;
             @media ($width-desktop) {
                 transform: translateY(70px);
