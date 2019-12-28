@@ -1,5 +1,39 @@
-@import '../../../assets/style/_variables';
-@import '../../../assets/style/_visually-hidden';
+@import '../../../assets/style/_helpers';
 .bill-page {
-    background-color: $main-color;
+    padding: 20px 30px;
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid $header_color;
+        &--card {
+            justify-content: flex-start;
+        }
+    }
+    &__title {
+        margin: 0 0 15px 0;
+        font-size: 25px;
+        font-weight: 600;
+        color: $header_text_color;
+    }
+    &__refresh {
+        @include btn-reset();
+        fill: $color_blue;
+    }
+    &__bill-card {
+        width: 100%;
+        height: 100%;
+        @media ($width-tablet) {
+            flex: 1 0 45%;
+            width: 45%;
+            height: 300px;
+        }
+    }
+    &__currency-card {
+        width: 100%;
+        height: 100%;
+        @media ($width-tablet) {
+            flex: 1 0 50%;
+            height: 300px;
+        }
+    }
 }
