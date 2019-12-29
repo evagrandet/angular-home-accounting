@@ -31,8 +31,9 @@
     }
     &__section {
         @media ($width-desktop) {
-            grid-column: 2 / 3;
+            grid-column: 2 / 4;
             grid-row: 2 / 3;
+            background-color: $main-color;
         }
     }
 }
