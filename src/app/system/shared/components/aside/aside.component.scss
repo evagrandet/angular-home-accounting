@@ -44,6 +44,9 @@
             background-color: $aside_active_color;
             .aside__item-link {
                 color: rgba($aside_text_color, 1);
+                svg {
+                    fill: $aside_text_color;
+                }
             }
         }
     }
