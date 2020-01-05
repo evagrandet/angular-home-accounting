@@ -1,6 +1,4 @@
-export class Bill {
-    constructor(
-        public value: string,
-        public currency: string
-    ) {}
+export interface Bill {
+    value: string;
+    currency: string;
 }

@@ -14,7 +14,7 @@ export class BillService {
       return this.http.get<Bill>('http://localhost:3000/bill');
   }
 
-  getCurrency() {
+  getCurrency(): Observable<any> {
       return this.http.get('http://data.fixer.io/api/latest?access_key=13a20973f8cc09e89a245f73a67d1dda');
   }
 }
