@@ -24,16 +24,25 @@
     &__list {
         @include ul-reset;
     }
-    &__list-item {
-        position: relative;
-        display: block;
+    &__item-link {
+        display: inline-flex;
+        align-items: center;
+        width: 100%;
         padding: 10px 50px;
+        text-decoration: none;
+        color: rgba($aside_text_color, 0.5);
+        svg {
+            margin-right: 10px;
+        }
         &:focus {
             color: $aside_text_color;
         }
         &:hover {
             color: $aside_text_color;
             background-color: darken($aside_color, 10%);
+            svg {
+                fill: $aside_text_color;
+            }
         }
         &:active {
             color: $aside_text_color;
@@ -42,16 +51,9 @@
         &--active {
             color: $aside_text_color;
             background-color: $aside_active_color;
-            .aside__item-link {
-                color: rgba($aside_text_color, 1);
-                svg {
-                    fill: $aside_text_color;
-                }
+            svg {
+                fill: $aside_text_color;
             }
         }
-    }
-    &__item-link {
-        color: rgba($aside_text_color, 0.5);
-        text-decoration: none;
     }
 }
