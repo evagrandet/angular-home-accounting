@@ -1,1 +1,27 @@
-<section class="currency-card"></section>
+<section class="currency-card">
+    <h3 class="currency-card__title">Курс</h3>
+    <table class="currency-card__table">
+        <thead class="currency-card__table-head">
+            <td>Валюта</td>
+            <td>Курс</td>
+            <td>Дата</td>
+        </thead>
+        <tbody>
+            <tr>
+                <td>доллар</td>
+                <td></td>
+                <td>{{ currency.date | date : 'd.mmmm.yyyy'}}</td>
+            </tr>
+            <tr>
+                <td>евро</td>
+                <td></td>
+                <td>{{ currency.date }}</td>
+            </tr>
+            <tr>
+                <td>рубль</td>
+                <td></td>
+                <td>{{ currency.date }}</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
