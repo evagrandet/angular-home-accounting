@@ -1,7 +1,7 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Output } from '@angular/core';
 import { BillService } from '../shared/services/bill.service';
 import { Bill } from '../shared/models/bill';
-import { combineLatest, Subscription, Observable } from 'rxjs';
+import { combineLatest, Subscription } from 'rxjs';
 
 
 @Component({
@@ -10,20 +10,34 @@ import { combineLatest, Subscription, Observable } from 'rxjs';
   styleUrls: ['./bill-page.component.scss']
 })
 export class BillPageComponent implements OnInit, OnDestroy {
+    isLoad = false;
+    currency: any;
+    bill: Bill;
+    sub1: Subscription;
+    sub2: Subscription;
 
-    subscription: Subscription;
+    constructor(private billService: BillService) { }
 
-  constructor(private billService: BillService) { }
-
-  ngOnInit() {
-      this.subscription = combineLatest(
-          this.billService.getBill(),
-          this.billService.getCurrency())
-          .subscribe(
-              (data: [Bill, any]) => console.log(data));
-  }
-  ngOnDestroy() {
-      this.subscription.unsubscribe();
-  }
-
+    ngOnInit() {
+        this.sub1 = combineLatest(
+            this.billService.getBill(),
+            this.billService.getCurrency())
+            .subscribe((data: [Bill, any]) => {
+                this.bill = data[0],
+                this.currency = data[1];
+                this.isLoad = true;
+          });
+    }
+    ngOnDestroy() {
+        this.sub1.unsubscribe();
+        this.sub2.unsubscribe();
+    }
+    onRefresh() {
+        this.isLoad = false;
+        this.sub2 = this.billService.getCurrency()
+            .subscribe((currency: any) => {
+                this.currency = currency;
+        });
+        this.isLoad = true;
+    }
 }
