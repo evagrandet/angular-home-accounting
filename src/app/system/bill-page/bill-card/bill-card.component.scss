@@ -1,6 +1,7 @@
 @import '../../../../assets/style/helpers';
 .bill-card {
-    width: 95%;
+    max-width: 95%;
+    min-width: 90%;
     height: 100%;
     padding: 20px;
     background-color: $card-color;
