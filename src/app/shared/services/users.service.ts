@@ -21,7 +21,7 @@ export class UsersService extends BaseApi {
     }
 
     getUserByEmail(email: string): Observable<User> {
-        return this.http.get(`http://localhost:3000/users?email=${email}`).pipe(map((user: User[]) => user[0] ? user [0] : undefined));
+        return this.get(`users?email=${email}`).pipe(map((user: User[]) => user[0] ? user [0] : undefined));
     }
 
   createUser(user): Observable<any> {
