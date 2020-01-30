@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-    @Output() isOpenMobileMenu = false;
+    @Output() isOpenMobileMenu: boolean;
     isOpenUserMenu = false;
     isDarkTheme: boolean;
     user: User;
