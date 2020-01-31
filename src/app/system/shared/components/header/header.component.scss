@@ -13,6 +13,15 @@
     @media ($width-desktop) {
         padding: 0;
     }
+    &__title {
+        z-index: 100;
+        width: 200px;
+        margin-right: auto;
+        margin-left: 15px;
+        font-size: 25px;
+        font-weight: 400;
+        color: rgba($aside_text_color, 0.5);
+    }
     &__menu {
         @include btn-reset();
         position: relative;
