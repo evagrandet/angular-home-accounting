@@ -30,10 +30,10 @@
         }
     }
     &__section {
+        background-color: $main-color;
         @media ($width-desktop) {
             grid-column: 2 / 4;
             grid-row: 2 / 3;
-            background-color: $main-color;
         }
     }
 }
