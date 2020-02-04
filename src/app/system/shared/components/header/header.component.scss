@@ -14,14 +14,17 @@
         padding: 0;
     }
     &__title {
-        display: none;
+        font-size: 20px;
+        font-weight: 400;
+        color: $header_text_color;
+        text-align: center;
         @media ($width-desktop) {
             z-index: 100;
             width: 200px;
             margin-right: auto;
             margin-left: 15px;
             font-size: 25px;
-            font-weight: 400;
+            text-align: left;
             color: rgba($aside_text_color, 0.5);
         }
     }
