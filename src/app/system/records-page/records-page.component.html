@@ -1,3 +1,13 @@
-<app-add-event></app-add-event>
-<app-add-category></app-add-category>
-<app-edit-category></app-edit-category>
+<section class="records-page" *ngIf="!isLoad">
+    <div class="records-page__wrapper">
+        <h2 class="records-page__title">Страница записей</h2>
+    </div>
+    <div class="records-page__wrapper records-page__wrapper--card">
+        <app-add-event class="records-page__add-event"></app-add-event>
+        <app-add-category class="records-page__add-category"></app-add-category>
+        <app-edit-category class="records-page__edit-category"></app-edit-category>
+    </div>
+</section>
+<section *ngIf="isLoad">
+    тык
+</section>

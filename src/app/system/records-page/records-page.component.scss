@@ -1,0 +1,40 @@
+@import '../../../assets/style/_helpers';
+.records-page {
+    padding: 20px 10px;
+    @media ($width-tablet) {
+        padding: 20px 50px;
+    }
+    &__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        border-bottom: 1px solid $header_color;
+        &--card {
+            margin-top: 20px;
+            border-bottom: none;
+        }
+    }
+    &__title {
+        margin: 0 0 15px 0;
+        font-size: 25px;
+        font-weight: 600;
+        color: $header_text_color;
+    }
+    &__event {
+        width: 100%;
+        height: 100%;
+        @media ($width-tablet) {
+            flex: 1 0 45%;
+            width: 45%;
+            height: 300px;
+        }
+    }
+    &__category {
+        width: 100%;
+        height: 100%;
+        @media ($width-tablet) {
+            flex: 1 0 45%;
+            height: 300px;
+        }
+    }
+}
