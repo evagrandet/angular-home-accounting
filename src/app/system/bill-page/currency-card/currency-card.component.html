@@ -1,26 +1,26 @@
-<section class="currency-card">
-    <h3 class="currency-card__title">Курс</h3>
-    <table class="currency-card__table">
-        <thead class="currency-card__table-row currency-card__table-row--head">
-            <td class="currency-card__table-cell">Валюта</td>
-            <td class="currency-card__table-cell">Курс</td>
-            <td class="currency-card__table-cell">Дата</td>
+<section class="card">
+    <h3 class="card__title">Курс</h3>
+    <table class="card__table">
+        <thead class="card__table-row card__table-row--head">
+            <td class="card__table-cell">Валюта</td>
+            <td class="card__table-cell">Курс</td>
+            <td class="card__table-cell">Дата</td>
         </thead>
         <tbody>
-            <tr class="currency-card__table-row">
-                <td class="currency-card__table-cell">доллар</td>
-                <td class="currency-card__table-cell">{{ currency.rates['USD'] }}</td>
-                <td class="currency-card__table-cell">{{ currency.date | date : 'dd.MM.yyyy'}}</td>
+            <tr class="card__table-row">
+                <td class="card__table-cell">доллар</td>
+                <td class="card__table-cell">{{ currency.rates['USD'] }}</td>
+                <td class="card__table-cell">{{ currency.date | date : 'dd.MM.yyyy'}}</td>
             </tr>
-            <tr class="currency-card__table-row">
-                <td class="currency-card__table-cell">фунт стерлингов</td>
-                <td class="currency-card__table-cell">{{ currency.rates['GBP'] }}</td>
-                <td class="currency-card__table-cell">{{ currency.date | date : 'dd.MM.yyyy'}}</td>
+            <tr class="card__table-row">
+                <td class="card__table-cell">фунт стерлингов</td>
+                <td class="card__table-cell">{{ currency.rates['GBP'] }}</td>
+                <td class="card__table-cell">{{ currency.date | date : 'dd.MM.yyyy'}}</td>
             </tr>
-            <tr class="currency-card__table-row">
-                <td class="currency-card__table-cell">рубль</td>
-                <td class="currency-card__table-cell">{{ currency.rates['RUB'] }}</td>
-                <td class="currency-card__table-cell">{{ currency.date | date : 'dd.MM.yyyy'}}</td>
+            <tr class="card__table-row">
+                <td class="card__table-cell">рубль</td>
+                <td class="card__table-cell">{{ currency.rates['RUB'] }}</td>
+                <td class="card__table-cell">{{ currency.date | date : 'dd.MM.yyyy'}}</td>
             </tr>
         </tbody>
     </table>

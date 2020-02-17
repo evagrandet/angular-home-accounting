@@ -1,26 +1,26 @@
-<section class="add-event">
-    <h3 class="add-event__title">Добавить событие</h3>
-    <form class="add-event__form">
-        <fieldset class="add-event__form-category">
-            <legend class="add-event__form-legend" for="category">Выберите категорию</legend>
-            <select class="add-event__form-select" id="category">
+<section class="card">
+    <h3 class="card__title">Добавить событие</h3>
+    <form class="card__form">
+        <fieldset class="card__form-category">
+            <legend class="card__form-legend" for="category">Выберите категорию</legend>
+            <select class="card__form-select" id="category">
                 <option>Option one</option>
                 <option>Option two</option>
                 <option>Option three</option>
                 <option>Option four</option>
             </select>
         </fieldset>
-        <fieldset class="add-event__form-type">
-            <legend class="add-event__form-legend">Выберите тип</legend>
-            <label class="add-event__form-label" for="income">Доход</label>
-            <input id="income" class="add-event__form-radio" name="radios" type="radio">
-            <label class="add-event__form-label" for="outgo">Расход</label>
-            <input id="outgo" class="add-event__form-radio" name="radios" type="radio" checked>
+        <fieldset class="card__form-type">
+            <legend class="card__form-legend">Выберите тип</legend>
+            <label class="card__form-label" for="income">Доход</label>
+            <input id="income" class="card__form-radio" name="radios" type="radio">
+            <label class="card__form-label" for="outgo">Расход</label>
+            <input id="outgo" class="card__form-radio" name="radios" type="radio" checked>
         </fieldset>
-        <fieldset class="add-event__form-sum">
-            <legend class="add-event__form-legend" for="amount">Введите сумму</legend>
-            <input type="number" value="0" id="amount" class="add-event__form-number">
+        <fieldset class="card__form-sum">
+            <legend class="card__form-legend" for="amount">Введите сумму</legend>
+            <input type="number" value="0" id="amount" class="card__form-number">
         </fieldset>
-        <button type="submit" class="btn add-event__form-btn" aria-label="Добавить категорию">Добавить</button>
+        <button type="submit" class="btn card__form-btn" aria-label="Добавить категорию">Добавить</button>
     </form>
 </section>

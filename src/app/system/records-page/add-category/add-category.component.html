@@ -1,22 +1,16 @@
-<section class="add-category">
-    <div class="card-header bordered">
-        <div class="header-block">
-            <h3 class="add-category__title">Добавить категорию</h3>
-        </div>
-    </div>
-    <div class="card-block">
-        <form>
-            <div class="form-group has-error">
-                <label class="control-label" for="category-name">Введите название</label>
-                <input type="text" id="category-name" class="form-control">
-                <span class="form-help-text">Валидация ошибка</span>
-            </div>
-            <div class="form-group has-success">
-                <label class="control-label" for="category-value">Введите лимит</label>
-                <input type="number" value="0" id="category-value" class="form-control">
-                <span class="form-help-text">Валидация нет ошибки</span>
-            </div>
-            <button type="submit" class="btn btn-primary">Добавить</button>
-        </form>
-    </div>
+<section class="card">
+    <h3 class="card__title">Добавить категорию</h3>
+    <form class="card__form">
+        <fieldset class="card__fieldset">
+            <legend class="card__legend" for="category-name">Введите название</legend>
+            <input type="text" id="category-name" class="card__input">
+            <span class="card__message card__message--error">Валидация ошибка</span>
+        </fieldset>
+        <fieldset class="card__fieldset">
+            <legend class="card__legend" for="category-value">Введите лимит</legend>
+            <input type="number" value="0" id="category-value" class="card__input">
+            <span class="card__message card__message--success">Валидация нет ошибки</span>
+        </fieldset>
+        <button type="submit" class="card__btn card__btn--add">Добавить</button>
+    </form>
 </section>
