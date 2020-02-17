@@ -1,12 +1,2 @@
 @import '../../../../assets/style/helpers';
-.add-event {
-    padding: 20px;
-    background-color: $card-color;
-    border-radius: 8px;
-    &__title {
-        margin: 0;
-        font-size: 20px;
-        font-weight: 500;
-        color: $card-color-text;
-    }
-}
+@import '../../../../assets/style/common/card';
