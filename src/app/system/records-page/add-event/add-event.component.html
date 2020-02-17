@@ -1,7 +1,7 @@
 <section class="card">
     <h3 class="card__title">Добавить событие</h3>
     <form class="card__form">
-        <fieldset class="card__form-category">
+        <fieldset class="card__form-fieldset">
             <legend class="card__form-legend" for="category">Выберите категорию</legend>
             <select class="card__form-select" id="category">
                 <option>Option one</option>
@@ -10,17 +10,17 @@
                 <option>Option four</option>
             </select>
         </fieldset>
-        <fieldset class="card__form-type">
+        <fieldset class="card__form-fieldset">
             <legend class="card__form-legend">Выберите тип</legend>
             <label class="card__form-label" for="income">Доход</label>
-            <input id="income" class="card__form-radio" name="radios" type="radio">
+            <input id="income" class="card__form-input" name="radios" type="radio">
             <label class="card__form-label" for="outgo">Расход</label>
-            <input id="outgo" class="card__form-radio" name="radios" type="radio" checked>
+            <input id="outgo" class="card__form-input" name="radios" type="radio" checked>
         </fieldset>
-        <fieldset class="card__form-sum">
+        <fieldset class="card__form-fieldset">
             <legend class="card__form-legend" for="amount">Введите сумму</legend>
-            <input type="number" value="0" id="amount" class="card__form-number">
+            <input type="number" value="0" id="amount" class="card__form-input">
         </fieldset>
-        <button type="submit" class="btn card__form-btn" aria-label="Добавить категорию">Добавить</button>
+        <button type="submit" class="card__form-btn card__form-btn--add" aria-label="Добавить категорию">Добавить</button>
     </form>
 </section>
