@@ -1,15 +1,15 @@
 <section class="card">
     <h3 class="card__title">Добавить категорию</h3>
-    <form class="card__form">
-        <fieldset class="card__form-fieldset">
+    <form class="card__form" #form="ngForm" (ngSubmit)="onSubmit(form)">
+        <fieldset class="card__form-fieldset" [ngClass]="{'card__form-fieldset--error' : name.invalid && name.touched}">
             <legend class="card__form-legend" for="category-name">Введите название</legend>
-            <input type="text" id="category-name" class="card__form-input">
-            <span class="card__form-message card__form-message--error">Валидация ошибка</span>
+            <input type="text" id="category-name" class="card__form-input inputs" #name="ngModel" name="name" ngModel required>
+            <span class="card__form-message card__form-message--error" *ngIf="name.invalid && name.touched">Имя категории обязательно</span>
         </fieldset>
-        <fieldset class="card__form-fieldset">
-            <legend class="card__form-legend" for="category-value">Введите лимит</legend>
-            <input type="number" value="0" id="category-value" class="card__form-input">
-            <span class="card__form-message card__form-message--success">Валидация нет ошибки</span>
+        <fieldset class="card__form-fieldset" [ngClass]="{'card__form-fieldset--error' : capacity.invalid && capacity.touched}">
+            <legend class="card__form-legend" for="category-capacity">Введите лимит</legend>
+            <input type="number" min="1" id="category-capacity" class="card__form-input inputs" #capacity="ngModel" [ngModel]="1" name="capacity" required>
+            <span class="card__form-message card__form-message--success" *ngIf="capacity.invalid && capacity.touched">Валидация нет ошибки</span>
         </fieldset>
         <button type="submit" class="card__form-btn card__form-btn--add">Добавить</button>
     </form>
