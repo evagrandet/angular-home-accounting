@@ -10,7 +10,17 @@
         "value": 100000,
         "currency": "RUB"
     },
-    "categories": [],
+    "categories": [{
+            "name": "Дом",
+            "capacity": 1,
+            "id": 1
+        },
+        {
+            "name": "Семья",
+            "capacity": 1,
+            "id": 2
+        }
+    ],
     "events": [{
             "id": 1,
             "type": "income",
