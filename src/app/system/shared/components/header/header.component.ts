@@ -1,12 +1,12 @@
 import { Component, OnInit, Output } from '@angular/core';
-import { User } from 'src/app/shared/models/user';
-import { AuthService } from 'src/app/shared/services/auth.service';
+import { User } from 'app/shared/models/user';
+import { AuthService } from 'app/shared/services/auth.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+    selector: 'app-header',
+    templateUrl: './header.component.html',
+    styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
     @Output() isOpenMobileMenu: boolean;
@@ -14,13 +14,12 @@ export class HeaderComponent implements OnInit {
     isDarkTheme: boolean;
     user: User;
 
-  constructor(private authService: AuthService, private router: Router) { }
+    constructor(private authService: AuthService, private router: Router) {}
 
-  ngOnInit() {
-  }
+    ngOnInit() {}
 
-      toggleMobileMenu() {
-      this.isOpenMobileMenu = !this.isOpenMobileMenu;
+    toggleMobileMenu() {
+        this.isOpenMobileMenu = !this.isOpenMobileMenu;
     }
     toggleUserMenu() {
         this.isOpenUserMenu = !this.isOpenUserMenu;
