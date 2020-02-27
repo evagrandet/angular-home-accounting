@@ -88,4 +88,19 @@
             background-color: $color_grey2;
         }
     }
+    &__success-message {
+        display: block;
+        width: 100%;
+        height: auto;
+        padding: 10px;
+        margin-bottom: 25px;
+        text-align: center;
+        color: $success-color;
+        border: 1px solid $success-color;
+        border-radius: 4px;
+    }
+    &__wrapper {
+        display: flex;
+        justify-content: space-around;
+    }
 }
