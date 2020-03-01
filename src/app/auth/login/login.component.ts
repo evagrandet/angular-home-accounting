@@ -40,8 +40,8 @@ export class LoginComponent implements OnInit {
     onSubmit() {
         const formData = this.form.value;
         return this.usersService.getUser(formData).subscribe(user => {
-            if (user.find(item => item.email === formData.email)) {
-                if (user.find(item => item.password === formData.password)) {
+            if (user.find((user: User) => user.email === formData.email)) {
+                if (user.find((user: User) => user.password === formData.password)) {
                     window.localStorage.setItem('user', JSON.stringify(user));
                     this.authService.login();
                     this.router.navigate(['/system', 'bill']);
