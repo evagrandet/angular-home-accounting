@@ -1,26 +1,61 @@
 <section class="card">
     <h3 class="card__title">Добавить событие</h3>
-    <form class="card__form">
+    <form class="card__form" #form="ngForm" (ngSubmit)="onSubmit(form)">
         <fieldset class="card__form-fieldset">
             <legend class="card__form-legend" for="category">Выберите категорию</legend>
-            <select class="card__form-select" id="category">
-                <option>Option one</option>
-                <option>Option two</option>
-                <option>Option three</option>
-                <option>Option four</option>
+            <select class="card__form-select" id="category" name="category" [ngModel]="1" NgModel required>
+                <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
             </select>
         </fieldset>
-        <fieldset class="card__form-fieldset">
-            <legend class="card__form-legend">Выберите тип</legend>
-            <label class="card__form-label" for="income">Доход</label>
-            <input id="income" class="card__form-input" name="radios" type="radio">
-            <label class="card__form-label" for="outgo">Расход</label>
-            <input id="outgo" class="card__form-input" name="radios" type="radio" checked>
+        <div class="card__wrapper">
+            <fieldset class="card__form-fieldset">
+                <legend class="card__form-legend">Выберите тип</legend>
+                <label class="card__form-label" for="income">
+                    <input
+                        id="income"
+                        class="card__form-input"
+                        ngModel
+                        #income="ngModel"
+                        value="income"
+                        name="type"
+                        type="radio"
+                    />
+                    Доход
+                </label>
+                <label class="card__form-label" for="outcome">
+                    <input
+                        id="outcome"
+                        class="card__form-input"
+                        ngModel
+                        #outcome="ngModel"
+                        value="outcome"
+                        name="type"
+                        type="radio"
+                        checked
+                    />
+                    Расход
+                </label>
+            </fieldset>
+            <fieldset class="card__form-fieldset" [ngClass]="{ 'card__form-fieldset--error': (amount.invalid && amount.touched) || isError }">
+                <legend class="card__form-legend" for="amount">Введите сумму</legend>
+                <input type="number" name="amount" id="amount" class="inputs card__form-input" min="1" [ngModel]="1" #amount="ngModel" />
+                <span class="card__form-message card__form-message--error" *ngIf="amount.invalid && amount.touched">
+                    Сумма обязательна
+                </span>
+                <span class="card__form-message card__form-message--error" *ngIf="isError">
+                    У тебя деняк меньше, чем эта твоя покупка
+                </span>
+            </fieldset>
+        </div>
+        <fieldset class="card__form-fieldset" [ngClass]="{ 'card__form-fieldset--error': description.invalid && description.touched }">
+            <legend class="card__form-legend" for="description">Описание</legend>
+            <input type="text" name="description" id="description" class="inputs card__form-input" ngModel #description="ngModel" />
         </fieldset>
-        <fieldset class="card__form-fieldset">
-            <legend class="card__form-legend" for="amount">Введите сумму</legend>
-            <input type="number" value="0" id="amount" class="card__form-input">
-        </fieldset>
-        <button type="submit" class="card__form-btn card__form-btn--add" aria-label="Добавить категорию">Добавить</button>
+        <span class="card__form-message card__form-message--error" *ngIf="description.invalid && description.touched">
+            Описание обязательно
+        </span>
+        <button type="submit" class="card__form-btn card__form-btn--add" aria-label="Добавить категорию" [disabled]="form.invalid">
+            Добавить
+        </button>
     </form>
 </section>
