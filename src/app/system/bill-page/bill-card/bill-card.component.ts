@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Bill } from '../../shared/models/bill';
+import { Bill } from '../../../shared/models/bill';
 
 @Component({
   selector: 'app-bill-card',

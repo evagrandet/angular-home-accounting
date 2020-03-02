@@ -12,32 +12,29 @@ import { HeaderComponent } from './shared/components/header/header.component';
 import { AsideComponent } from './shared/components/aside/aside.component';
 import { BillCardComponent } from './bill-page/bill-card/bill-card.component';
 import { CurrencyCardComponent } from './bill-page/currency-card/currency-card.component';
-import { BillService } from './shared/services/bill.service';
+import { BillService } from '../shared/services/bill.service';
 import { AddEventComponent } from './records-page/add-event/add-event.component';
 import { AddCategoryComponent } from './records-page/add-category/add-category.component';
 import { EditCategoryComponent } from './records-page/edit-category/edit-category.component';
-import { CategoriesService } from './shared/services/categories.service';
+import { CategoriesService } from '../shared/services/categories.service';
+import { ActionsService } from 'app/shared/services/actions.service';
 
 @NgModule({
-  declarations: [
-      SystemComponent,
-      BillPageComponent,
-      HistoryPageComponent,
-      PlanningPageComponent,
-      RecordsPageComponent,
-      HeaderComponent,
-      AsideComponent,
-      BillCardComponent,
-      CurrencyCardComponent,
-      AddEventComponent,
-      AddCategoryComponent,
-      EditCategoryComponent,
+    declarations: [
+        SystemComponent,
+        BillPageComponent,
+        HistoryPageComponent,
+        PlanningPageComponent,
+        RecordsPageComponent,
+        HeaderComponent,
+        AsideComponent,
+        BillCardComponent,
+        CurrencyCardComponent,
+        AddEventComponent,
+        AddCategoryComponent,
+        EditCategoryComponent,
     ],
-  imports: [
-    CommonModule,
-    SharedModule,
-    SystemRoutingModule
-  ],
-  providers: [BillService, CategoriesService]
+    imports: [CommonModule, SharedModule, SystemRoutingModule],
+    providers: [BillService, CategoriesService, ActionsService],
 })
-export class SystemModule { }
+export class SystemModule {}
