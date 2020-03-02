@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Category } from 'src/app/shared/models/category';
+import { Category } from 'app/shared/models/category';
+import { CategoriesService } from 'app/shared/services/categories.service';
 
 @Component({
     selector: 'app-edit-category',
@@ -12,8 +13,9 @@ export class EditCategoryComponent implements OnInit {
     @Output() categoryEdit = new EventEmitter<Category>();
     currentCategoryId = 1;
     currentCategory: Category;
+    successEdit = false;
 
-    constructor() {}
+    constructor(private categoriesService: CategoriesService) {}
 
     ngOnInit() {
         this.onCategoryChanged();
@@ -24,11 +26,17 @@ export class EditCategoryComponent implements OnInit {
         if (capacity < 0) {
             capacity *= -1;
         }
+        this.currentCategory.name = name;
+        this.currentCategory.capacity = capacity;
+        this.categoriesService
+            .updateCategory(this.currentCategory, +this.currentCategoryId)
+            .subscribe((category: Category) => {
+                this.categoryEdit.emit(category);
+                this.successEdit = true;
+            });
     }
 
     onCategoryChanged() {
-        this.currentCategory = this.categories.find(c => c.id == this.currentCategoryId);
+        this.currentCategory = this.categories.find((c: Category) => c.id == this.currentCategoryId);
     }
-
-    updateCa;
 }

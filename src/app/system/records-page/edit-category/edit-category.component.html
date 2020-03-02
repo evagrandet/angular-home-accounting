@@ -11,13 +11,16 @@
                 </option>
             </select>
         </fieldset>
+        <div class="card__success-message" *ngIf="successEdit">
+            Категория отредактирована
+        </div>
         <fieldset class="card__form-fieldset" [ngClass]="{
                 'card__form-fieldset--error': name.invalid && name.touched
             }">
             <legend class="card__form-legend" for="edit-category-name">
                 Введите название
             </legend>
-            <input type="text" id="edit-category-name" class="card__form-input inputs" #name="ngModel" name="name" [ngModel]="currentCategory?.name" required />
+            <input type="text" id="edit-category-name" class="inputs card__form-input inputs" #name="ngModel" name="name" [ngModel]="currentCategory?.name" required />
             <span class="card__form-message card__form-message--error" *ngIf="name.invalid && name.touched">
                 Имя категории обязательно
             </span>
@@ -28,13 +31,13 @@
             <legend class="card__form-legend" for="edit-category-capacity">
                 Введите лимит
             </legend>
-            <input type="number" min="1" id="edit-category-capacity" class="card__form-input inputs" #capacity="ngModel" [ngModel]="currentCategory?.capacity" name="capacity" required />
+            <input type="number" min="1" id="edit-category-capacity" class=" inputs card__form-input inputs" #capacity="ngModel" [ngModel]="currentCategory?.capacity" name="capacity" required />
             <span class="card__form-message card__form-message--success" *ngIf="capacity.invalid && capacity.touched">
                 Валидация нет ошибки
             </span>
         </fieldset>
         <button type="submit" class="card__form-btn card__form-btn--add" [disabled]="form.invalid">
-            Добавить
+            Редактировать
         </button>
     </form>
 </section>
