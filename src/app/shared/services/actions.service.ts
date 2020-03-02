@@ -14,4 +14,8 @@ export class ActionsService extends BaseApi {
     addAction(action: Action): Observable<Action> {
         return this.post('events', action);
     }
+
+    getActions(): Observable<Action[]> {
+        return this.get('events');
+    }
 }
