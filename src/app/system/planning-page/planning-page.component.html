@@ -1,4 +1,4 @@
-<article class="planning-page">
+<article class="planning-page" *ngIf="isLoad">
     <div class="planning-page__wrapper">
         <h2 class="planning-page__title">Страница планирования</h2>
     </div>
@@ -7,19 +7,20 @@
             <h3 class="card__title">Расходы</h3>
             <p class="card__text">
                 Общий остаток:
-                <span class="card__text card__text--green">78 999.21 Р</span>
+                <span class="card__text card__text--hight">{{ bill.value | number: '1.2' }} &#8364;</span>
             </p>
         </div>
         <table class="card__table">
-            <tr>
+            <tr *ngFor="let item of categories">
                 <td class="card__table-cell">
+                    <span class="card__progress-name">{{ item.name }}</span>
                     <progress class="card__progress" max="100" value="50"></progress>
                 </td>
                 <td class="card__table-cell">
                     <p class="card__table-expenses">
-                        <span class="card__table-expenses card__table-expenses--now">300.00</span> из
-                        <span class="card__table-expenses card__table-expenses--all">1000.00</span> | осталось
-                        <span class="card__table-expenses card__table-expenses--balance">700.00</span> (руб.)
+                        <span class="card__table-expenses-text">300.00</span> из
+                        <span class="card__table-expenses-text">{{ item.capacity }}</span> | осталось
+                        <span class="card__table-expenses-text">700.00</span> &#8364;
                     </p>
                 </td>
             </tr>
