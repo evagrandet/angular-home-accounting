@@ -102,5 +102,18 @@
     &__wrapper {
         display: flex;
         justify-content: space-between;
+        align-items: center;
+    }
+    &__text {
+        margin: 0 0 15px;
+        &--hight {
+            color: $success-color;
+        }
+        &--low {
+            color: $warning_color;
+        }
+        &--almost-zero {
+            color: $error_color;
+        }
     }
 }
