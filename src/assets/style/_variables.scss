@@ -19,6 +19,7 @@ $color_blue2: #52bcd3;
 $color_white: #fff;
 $color_red: #fc7b7b;
 $color_green: #5bcda6;
+$color_yellow: #f0ad4e;
 //colors by components
 $header_color: $color_grey5;
 $header_text_color: $color_grey;
@@ -31,7 +32,9 @@ $card-color: $color_white;
 $card-color-text: $color_grey;
 $table-border-color: $color_grey5;
 $error_color: $color_red;
+$warning_color: $color_yellow;
 $success-color: $color_green;
+$progress-bar_color: $color_grey2;
 // fonts
 $font-system: -apple-system,
 BlinkMacSystemFont,
