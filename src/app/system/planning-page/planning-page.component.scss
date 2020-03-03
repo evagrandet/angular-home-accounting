@@ -8,6 +8,7 @@
     &__wrapper {
         display: flex;
         flex-wrap: wrap;
+        align-items: center;
         justify-content: space-between;
         margin-bottom: 30px;
         border-bottom: 1px solid $header_color;
@@ -22,9 +23,56 @@
 
 .card {
     &__table-cell {
+        position: relative;
         width: 50%;
     }
     &__progress {
         width: 90%;
+        height: 20px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        &[value]::-webkit-progress-bar,
+        &[value]::-moz-progress-bar {
+            background-color: $progress-bar_color;
+            border-radius: 2px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+        }
+        &--hight {
+            &[value]::-webkit-progress-value {
+                background-color: $success-color;
+                border-radius: 2px;
+            }
+        }
+        &--low {
+            &[value]::-webkit-progress-value {
+                background-color: $warning_color;
+                border-radius: 2px;
+            }
+        }
+        &--almost-zero {
+            &[value]::-webkit-progress-value {
+                background-color: $error_color;
+                border-radius: 2px;
+            }
+        }
+    }
+    &__progress-name {
+        position: absolute;
+        top: 12px;
+        left: 10px;
+        font-size: 14px;
+        line-height: 20px;
+    }
+    &__table-expenses {
+        &--hight {
+            color: $success-color;
+        }
+        &--low {
+            color: $warning_color;
+        }
+        &--almost-zero {
+            color: $error_color;
+        }
     }
 }
