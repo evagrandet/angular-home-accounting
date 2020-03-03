@@ -1,0 +1,30 @@
+@import '../../../assets/style/_helpers';
+@import '../../../assets/style/common/card';
+.planning-page {
+    padding: 20px 10px;
+    @media ($width-tablet) {
+        padding: 20px 50px;
+    }
+    &__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 30px;
+        border-bottom: 1px solid $header_color;
+    }
+    &__title {
+        margin: 0 0 15px 0;
+        font-size: 25px;
+        font-weight: 600;
+        color: $header_text_color;
+    }
+}
+
+.card {
+    &__table-cell {
+        width: 50%;
+    }
+    &__progress {
+        width: 90%;
+    }
+}

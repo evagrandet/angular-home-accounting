@@ -1,1 +1,31 @@
-<p>planning-page works!</p>
+<article class="planning-page">
+    <div class="planning-page__wrapper">
+        <h2 class="planning-page__title">Страница планирования</h2>
+    </div>
+    <section class="planning-page__card card">
+        <div class="card__wrapper">
+            <h3 class="card__title">Расходы</h3>
+            <p class="card__text">
+                Общий остаток:
+                <span class="card__text card__text--green">78 999.21 Р</span>
+            </p>
+        </div>
+        <table class="card__table">
+            <tr>
+                <td class="card__table-cell">
+                    <progress class="card__progress" max="100" value="50"></progress>
+                </td>
+                <td class="card__table-cell">
+                    <p class="card__table-expenses">
+                        <span class="card__table-expenses card__table-expenses--now">300.00</span> из
+                        <span class="card__table-expenses card__table-expenses--all">1000.00</span> | осталось
+                        <span class="card__table-expenses card__table-expenses--balance">700.00</span> (руб.)
+                    </p>
+                </td>
+            </tr>
+        </table>
+    </section>
+</article>
+<section *ngIf="!isLoad">
+    тык
+</section>
