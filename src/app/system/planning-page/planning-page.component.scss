@@ -32,8 +32,8 @@
         -webkit-appearance: none;
         -moz-appearance: none;
         appearance: none;
-        &[value]::-webkit-progress-bar,
-        &[value]::-moz-progress-bar {
+        background-color: $progress-bar_color;
+        &[value]::-webkit-progress-bar {
             background-color: $progress-bar_color;
             border-radius: 2px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
@@ -43,17 +43,26 @@
                 background-color: $success-color;
                 border-radius: 2px;
             }
+            &[value]::-moz-progress-bar {
+                background-color: $success-color;
+            }
         }
         &--low {
             &[value]::-webkit-progress-value {
                 background-color: $warning_color;
                 border-radius: 2px;
             }
+            &[value]::-moz-progress-bar {
+                background-color: $warning_color;
+            }
         }
         &--almost-zero {
             &[value]::-webkit-progress-value {
                 background-color: $error_color;
                 border-radius: 2px;
+            }
+            &[value]::-moz-progress-bar {
+                background-color: $error_color;
             }
         }
     }
