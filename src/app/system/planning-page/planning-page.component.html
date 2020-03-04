@@ -14,13 +14,19 @@
             <tr *ngFor="let item of categories">
                 <td class="card__table-cell">
                     <span class="card__progress-name">{{ item.name }}</span>
-                    <progress class="card__progress" max="100" value="50"></progress>
+                    <progress class="card__progress" [ngClass]="{
+                            'card__progress--hight': getCatPercents(item) <= 60,
+                            'card__progress--hight': getCatPercents(item) > 60,
+                            'card__progress--hight': getCatPercents(item) <= 90
+                        }" max="100" [value]="getCatPercents(item)"></progress>
                 </td>
                 <td class="card__table-cell">
                     <p class="card__table-expenses">
-                        <span class="card__table-expenses-text">300.00</span> из
-                        <span class="card__table-expenses-text">{{ item.capacity }}</span> | осталось
-                        <span class="card__table-expenses-text">700.00</span> &#8364;
+                        <span class="card__table-expenses-text">{{ getCategoryCost(item) | number: '1.2' }}</span> из
+                        <span class="card__table-expenses-text">{{ item.capacity | number: '1.2' }}</span> | осталось
+                        <span class="card__table-expenses-text">
+                            {{ item.capacity - getCategoryCost(item) | number: '1.2' }}
+                        </span> &#8364;
                     </p>
                 </td>
             </tr>
