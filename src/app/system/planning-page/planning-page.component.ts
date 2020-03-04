@@ -35,8 +35,19 @@ export class PlanningPageComponent implements OnInit, OnDestroy {
         });
     }
 
-    getPercents(all: number, num: number): number {
-        return (num * 100) / all;
+    getCatPercents(category: Category): number {
+        const percents = (this.getCategoryCost(category) * 100) / category.capacity;
+        console.log(percents);
+        return percents;
+    }
+    getCategoryCost(category: Category): number {
+        let categoryActions = this.actions.filter(
+            (action: Action) => action.category === category.id && action.type === 'outcome',
+        );
+        return categoryActions.reduce((total, action) => {
+            total += action.amount;
+            return total;
+        }, 0);
     }
 
     ngOnDestroy() {
