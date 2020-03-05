@@ -1,1 +1,11 @@
-<p>history-page works!</p>
+<section class="history-page">
+    <div class="history-page__wrapper">
+        <h2 class="history-page__title">Страница истории</h2>
+    </div>
+    <div class="history-page__wrapper history-page__wrapper--card" *ngIf="isLoad">
+        <app-history-chart></app-history-chart>
+    </div>
+</section>
+<section *ngIf="!isLoad">
+    тык
+</section>
