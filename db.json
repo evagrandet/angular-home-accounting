@@ -9,7 +9,7 @@
     }
   ],
   "bill": {
-    "value": 994000,
+    "value": 992790,
     "currency": "RUB"
   },
   "categories": [
@@ -22,6 +22,11 @@
       "name": "Семья",
       "capacity": 50000,
       "id": 2
+    },
+    {
+      "name": "Хобби",
+      "capacity": 10000,
+      "id": 3
     }
   ],
   "events": [
@@ -40,6 +45,38 @@
       "date": "04.03.2020 06:37:31",
       "description": "Мебель",
       "id": 2
+    },
+    {
+      "type": "outcome",
+      "amount": 100,
+      "category": 2,
+      "date": "11.03.2020 19:17:37",
+      "description": "Туалетная бумага",
+      "id": 3
+    },
+    {
+      "type": "outcome",
+      "amount": 1000,
+      "category": 3,
+      "date": "11.03.2020 19:19:21",
+      "description": "Клей",
+      "id": 4
+    },
+    {
+      "type": "outcome",
+      "amount": 100,
+      "category": 1,
+      "date": "11.03.2020 19:22:08",
+      "description": "Соль",
+      "id": 5
+    },
+    {
+      "type": "outcome",
+      "amount": 10,
+      "category": 3,
+      "date": "11.03.2020 19:34:22",
+      "description": "Интернет",
+      "id": 6
     }
   ]
 }
