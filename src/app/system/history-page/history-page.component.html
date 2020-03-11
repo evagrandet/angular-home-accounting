@@ -3,7 +3,7 @@
         <h2 class="history-page__title">Страница истории</h2>
     </div>
     <div class="history-page__wrapper history-page__wrapper--card" *ngIf="isLoad">
-        <app-history-chart></app-history-chart>
+        <app-history-chart class="history-page__chart" [data]="chartData"></app-history-chart>
     </div>
 </section>
 <section *ngIf="!isLoad">
