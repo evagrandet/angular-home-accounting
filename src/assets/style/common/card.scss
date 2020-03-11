@@ -26,6 +26,10 @@
     color: $card-color-text;
     background-color: $card-color;
     border-radius: 8px;
+    &--wild {
+        max-width: 100%;
+        min-width: 100%;
+    }
     &__title {
         margin: 0 0 15px 0;
         font-size: 20px;
