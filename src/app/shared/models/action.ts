@@ -5,4 +5,5 @@ export interface Action {
     category: number;
     date: string;
     description: string;
+    categoryName?: string;
 }

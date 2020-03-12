@@ -1,82 +1,78 @@
 {
-  "users": [
-    {
-      "id": 1,
-      "email": "wfm@mail.ru",
-      "password": "12345678",
-      "name": "Администратор",
-      "isDarkTheme": false
-    }
-  ],
-  "bill": {
-    "value": 992790,
-    "currency": "RUB"
-  },
-  "categories": [
-    {
-      "name": "Дом",
-      "capacity": 50000,
-      "id": 1
+    "users": [{
+        "id": 1,
+        "email": "wfm@mail.ru",
+        "password": "12345678",
+        "name": "Администратор",
+        "isDarkTheme": false
+    }],
+    "bill": {
+        "value": 992790,
+        "currency": "RUB"
     },
-    {
-      "name": "Семья",
-      "capacity": 50000,
-      "id": 2
-    },
-    {
-      "name": "Хобби",
-      "capacity": 10000,
-      "id": 3
-    }
-  ],
-  "events": [
-    {
-      "type": "outcome",
-      "amount": 1000,
-      "category": 1,
-      "date": "04.03.2020 06:25:43",
-      "description": "Купила Кисе корм",
-      "id": 1
-    },
-    {
-      "type": "outcome",
-      "amount": 5000,
-      "category": 1,
-      "date": "04.03.2020 06:37:31",
-      "description": "Мебель",
-      "id": 2
-    },
-    {
-      "type": "outcome",
-      "amount": 100,
-      "category": 2,
-      "date": "11.03.2020 19:17:37",
-      "description": "Туалетная бумага",
-      "id": 3
-    },
-    {
-      "type": "outcome",
-      "amount": 1000,
-      "category": 3,
-      "date": "11.03.2020 19:19:21",
-      "description": "Клей",
-      "id": 4
-    },
-    {
-      "type": "outcome",
-      "amount": 100,
-      "category": 1,
-      "date": "11.03.2020 19:22:08",
-      "description": "Соль",
-      "id": 5
-    },
-    {
-      "type": "outcome",
-      "amount": 10,
-      "category": 3,
-      "date": "11.03.2020 19:34:22",
-      "description": "Интернет",
-      "id": 6
-    }
-  ]
+    "categories": [{
+            "name": "Дом",
+            "capacity": 50000,
+            "id": 1
+        },
+        {
+            "name": "Семья",
+            "capacity": 50000,
+            "id": 2
+        },
+        {
+            "name": "Хобби",
+            "capacity": 10000,
+            "id": 3
+        }
+    ],
+    "events": [{
+            "type": "outcome",
+            "amount": 1000,
+            "category": 1,
+            "date": "04.03.2020",
+            "description": "Купила Кисе корм",
+            "id": 1
+        },
+        {
+            "type": "outcome",
+            "amount": 5000,
+            "category": 1,
+            "date": "04.03.2020",
+            "description": "Мебель",
+            "id": 2
+        },
+        {
+            "type": "outcome",
+            "amount": 100,
+            "category": 2,
+            "date": "11.03.2020",
+            "description": "Туалетная бумага",
+            "id": 3
+        },
+        {
+            "type": "outcome",
+            "amount": 1000,
+            "category": 3,
+            "date": "11.03.2020",
+            "description": "Клей",
+            "id": 4
+        },
+        {
+            "type": "outcome",
+            "amount": 100,
+            "category": 1,
+            "date": "11.03.2020",
+            "description": "Соль",
+            "id": 5
+        },
+        {
+            "type": "outcome",
+            "amount": 10,
+            "category": 3,
+            "date": "11.03.2020",
+            "description": "Интернет",
+            "id": 6
+        }
+    ]
 }
