@@ -3,7 +3,7 @@ import { BillService } from 'app/shared/services/bill.service';
 import { CategoriesService } from 'app/shared/services/categories.service';
 import { ActionsService } from 'app/shared/services/actions.service';
 import { Category } from 'app/shared/models/category';
-import { Observable, Subject, Subscriber, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { combineLatest } from 'rxjs';
 import { Bill } from 'app/shared/models/bill';
 import { Action } from 'app/shared/models/action';
@@ -37,7 +37,6 @@ export class PlanningPageComponent implements OnInit, OnDestroy {
 
     getCatPercents(category: Category): number {
         const percents = (this.getCategoryCost(category) * 100) / category.capacity;
-        console.log(percents);
         return percents;
     }
     getCategoryCost(category: Category): number {
