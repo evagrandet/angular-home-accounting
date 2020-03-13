@@ -4,6 +4,7 @@
     </div>
     <div class="history-page__wrapper history-page__wrapper--card" *ngIf="isLoad">
         <app-history-chart class="history-page__chart" [data]="chartData"></app-history-chart>
+        <app-history-events class="history-page__events" [categories]="categories" [actions]="actions"></app-history-events>
     </div>
 </section>
 <section *ngIf="!isLoad">

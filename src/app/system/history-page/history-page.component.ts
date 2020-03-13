@@ -33,7 +33,6 @@ export class HistoryPageComponent implements OnInit {
     calculateChartData(): void {
         this.chartData = [];
         this.categories.forEach((category: Category) => {
-            console.log(category);
             let categoryEvents = this.actions.filter(
                 (action: Action) => action.category === category.id && action.type === 'outcome',
             );
@@ -44,7 +43,6 @@ export class HistoryPageComponent implements OnInit {
                     return total;
                 }, 0),
             });
-            console.log(this.chartData);
         });
     }
     ngOnDestroy(): void {
