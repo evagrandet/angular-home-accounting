@@ -31,7 +31,7 @@ export class AddEventComponent implements OnInit, OnDestroy {
             type: form.value.type,
             amount: form.value.amount,
             category: +form.value.category,
-            date: moment().format('DD.MM.YYYY HH:mm:ss'),
+            date: moment().format('DD.MM.YYYY'),
             description: form.value.description,
         };
         this.sub1 = this.billService.getBill().subscribe((bill: Bill) => {
