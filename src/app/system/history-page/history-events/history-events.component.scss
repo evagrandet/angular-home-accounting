@@ -1,0 +1,21 @@
+@import '../../../../assets/style/helpers';
+@import '../../../../assets/style/common/card';
+@import '../../../../assets/style/common/inputs';
+.card {
+    &__header {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__wrapper {
+        width: 400px;
+        justify-content: flex-end;
+    }
+    &__search {
+        width: 250px;
+    }
+    &__form-btn {
+        text-decoration: none;
+        vertical-align: middle;
+        line-height: 38px;
+    }
+}
