@@ -51,7 +51,7 @@ export class PlanningPageComponent implements OnInit, OnDestroy {
 
     ngOnDestroy() {
         if (this.stream$) {
-            this.stream$.unsubscribe;
+            this.stream$.unsubscribe();
         }
     }
 }
