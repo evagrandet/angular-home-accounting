@@ -62,3 +62,22 @@
     background-color: transparent;
     text-align: left;
 }
+
+@mixin scrollbar {
+     ::-webkit-scrollbar {
+        width: 4px;
+        // height: 160px;
+    }
+     ::-webkit-scrollbar-thumb {
+        background: $color_grey5;
+        border-radius: 4px;
+    }
+     ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    // For Internet Explorer
+    body {
+        scrollbar-face-color: $color_grey5;
+        scrollbar-track-color: transparent;
+    }
+}
