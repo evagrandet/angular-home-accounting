@@ -22,6 +22,7 @@ import { HistoryChartComponent } from './history-page/history-chart/history-char
 import { HistoryEventsComponent } from './history-page/history-events/history-events.component';
 import { HistoryDetailComponent } from './history-page/history-detail/history-detail.component';
 import { HistoryFilterComponent } from './history-page/history-filter/history-filter.component';
+import { ModalModule } from 'app/shared/modal/modal.module';
 
 @NgModule({
     declarations: [
@@ -42,7 +43,8 @@ import { HistoryFilterComponent } from './history-page/history-filter/history-fi
         HistoryDetailComponent,
         HistoryFilterComponent,
     ],
-    imports: [CommonModule, SharedModule, SystemRoutingModule],
+    imports: [CommonModule, SharedModule, SystemRoutingModule, ModalModule],
     providers: [BillService, CategoriesService, ActionsService],
+    entryComponents: [HistoryDetailComponent],
 })
 export class SystemModule {}
