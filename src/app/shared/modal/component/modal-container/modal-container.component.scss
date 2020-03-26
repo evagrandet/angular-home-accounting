@@ -1,0 +1,10 @@
+:host {
+    .modal-overlay {
+        position: fixed;
+        top: 0;
+        z-index: 9999;
+        display: block;
+        height: 100%;
+        width: 100%;
+    }
+}
