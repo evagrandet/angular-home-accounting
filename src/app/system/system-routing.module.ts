@@ -8,17 +8,21 @@ import { PlanningPageComponent } from './planning-page/planning-page.component';
 import { RecordsPageComponent } from './records-page/records-page.component';
 import { HistoryEventsComponent } from './history-page/history-events/history-events.component';
 
-const routes: Routes = [{
-    path: 'system', component: SystemComponent, children: [
-        {path: 'bill', component: BillPageComponent},
-        {path: 'history', component: HistoryPageComponent, children:[HistoryEventsComponent]},
-        {path: 'planning', component: PlanningPageComponent},
-        {path: 'records', component: RecordsPageComponent}
-    ]
-}];
+const routes: Routes = [
+    {
+        path: 'system',
+        component: SystemComponent,
+        children: [
+            { path: 'bill', component: BillPageComponent },
+            { path: 'history', component: HistoryPageComponent },
+            { path: 'planning', component: PlanningPageComponent },
+            { path: 'records', component: RecordsPageComponent },
+        ],
+    },
+];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forChild(routes)],
+    exports: [RouterModule],
 })
-export class SystemRoutingModule { }
+export class SystemRoutingModule {}
