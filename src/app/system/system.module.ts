@@ -21,7 +21,6 @@ import { ActionsService } from 'app/shared/services/actions.service';
 import { HistoryChartComponent } from './history-page/history-chart/history-chart.component';
 import { HistoryEventsComponent } from './history-page/history-events/history-events.component';
 import { HistoryDetailComponent } from './history-page/history-detail/history-detail.component';
-import { HistoryFilterComponent } from './history-page/history-filter/history-filter.component';
 import { ModalModule } from 'app/shared/modal/modal.module';
 
 @NgModule({
@@ -41,7 +40,6 @@ import { ModalModule } from 'app/shared/modal/modal.module';
         HistoryChartComponent,
         HistoryEventsComponent,
         HistoryDetailComponent,
-        HistoryFilterComponent,
     ],
     imports: [CommonModule, SharedModule, SystemRoutingModule, ModalModule],
     providers: [BillService, CategoriesService, ActionsService],
