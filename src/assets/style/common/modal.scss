@@ -34,9 +34,11 @@
     &__inner {
         position: absolute;
         top: 10%;
-        left: calc(50% - 140px);
+        left: calc(50% - 250px);
+        display: flex;
+        flex-direction: column;
         padding: 15px;
-        width: 280px;
+        width: 500px;
         height: 400px;
         background-color: #fff;
         border-radius: 3px;
@@ -44,13 +46,16 @@
         animation: modalAnimate 0.3s;
     }
     &__close {
-        position: fixed;
+        @include btn-reset();
+        position: absolute;
         top: 0;
         right: 0;
         width: 35px;
         height: 35px;
         font-size: 0;
-        //background-image: url(~/assets/img/icons/cross--gray.svg);
+        background-image: url(~/assets/img/close.svg);
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
         &:focus {
             outline: none;
         }
