@@ -1,0 +1,45 @@
+$sides: 10;
+.error {
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    perspective: 2000px;
+    width: 100%;
+    ul,
+    li {
+        list-style: none;
+    }
+    @keyframes turn {
+        from {
+            transform: rotateX(0turn);
+        }
+        to {
+            transform: rotateX(1turn);
+        }
+    }
+    ul {
+        height: 12em;
+        width: 26em;
+        position: relative;
+    }
+    &__dollar {
+        @for $i from 1 through 35 {
+            &:nth-child(#{$i}) {
+                animation: turn 3s calc(#{$i} * -200ms) linear infinite;
+                background-image: url('~/assets/img/dollar.svg');
+                background-repeat: no-repeat;
+                background-size: cover;
+                // backface-visibility: hidden;
+                content: '';
+                height: 100%;
+                left: 0;
+                position: absolute;
+                top: 0;
+                width: 100%;
+                transform-origin: preserve-3d;
+                z-index: #{$i};
+            }
+        }
+    }
+}
