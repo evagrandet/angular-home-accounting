@@ -101,8 +101,8 @@ export class ModalService {
     private destroyModal() {
         if (this.modalInstance) {
             this.modalInstance.containerRef.destroy();
-            this.modalInstance = null;
-            this.modalResult = null;
+            this.modalInstance = null!;
+            this.modalResult = null!;
             // After close mode need call detect changes for all
             this.appRef.components[0].changeDetectorRef.detectChanges();
         }
