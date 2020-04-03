@@ -1,0 +1,163 @@
+<svg class="svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 118">
+      <path id="motionPath"
+            d="M64.46,58.09c0.09,12.42.51,35.46,11.6,43.77,5.78,4.33,12.3,1.63,14.35-3.94,1.87-5.07.11-12.07-5.48-17.17-11.09-10.11-61-9-75.69,4.58C-5,98.51,7.87,120.1,21.63,110.42S35.31,72.88,35.31,57.29,36,12.22,19,4.13C4.88-2.62-.27,13.18,3.91,23.31,7.33,31.6,16,39.95,39.19,41.23c15.87,0.88,36.18,4,45.42-6.4C89.73,29.1,91.52,21.05,89.36,16a8.85,8.85,0,0,0-10.85-4.72C69.89,13.87,64.23,28.08,64.46,58.09Z"
+            fill="none" stroke="#ededed" stroke-miterlimit="10" stroke-width="5"/>
+
+      <circle style="opacity: 0" id="circle" cx="0" cy="0" r="3" fill="#31a7c1">
+
+          <animate
+                  xlink:href="#circle"
+                  attributeName="opacity"
+                  from="1"
+                  to="0"
+                  dur="2.95s"
+                  begin="myanimcircle.begin"
+                  values="0; 0.2; 0.5; 0.7; 1; 0.7; 0.5; 0.2; 0;"
+                  keyTimes="0; 0.001; 0.01; 0.15; 0.2; 0.9; 0.91; 0.92; 1"
+                  fill="freeze"/>
+          <animateMotion
+                  xlink:href="#circle"
+                  dur="3s"
+                  begin="0s; pause.end"
+                  id="myanimcircle"
+                  keyTimes="0;1"
+                  calcMode="spline"
+                  keySplines=".02 .2 .3 .02"
+                  fill="freeze">
+              <mpath xlink:href="#motionPath"/>
+          </animateMotion>
+          <animateTransform begin="myanimcircle.end;" id="pause" dur="1s" type="translate" attributeType="XML"
+                            attributeName="transform"/>
+      </circle>
+
+      <circle style="opacity: 0" id="circle1" cx="0" cy="0" r="3" fill="#31a7c1"/>
+      <circle style="opacity: 0" id="circle2" cx="0" cy="0" r="3" fill="#31a7c1"/>
+      <circle style="opacity: 0" id="circle3" cx="0" cy="0" r="3" fill="#31a7c1"/>
+      <circle style="opacity: 0" id="circle4" cx="0" cy="0" r="3" fill="#31a7c1"/>
+      <circle style="opacity: 0" id="circle5" cx="0" cy="0" r="3" fill="#31a7c1"/>
+
+
+      <animateMotion
+              xlink:href="#circle1"
+              dur="3s"
+              begin="0.1s; pause1.end"
+              id="myanimcircle1"
+              keyTimes="0;1"
+              calcMode="spline"
+              keySplines=".02 .2 .3 .02"
+              fill="freeze">
+          <mpath xlink:href="#motionPath"/>
+      </animateMotion>
+      <animateMotion
+              xlink:href="#circle2"
+              dur="3s"
+              begin="0.2s; pause2.end"
+              id="myanimcircle2"
+              keyTimes="0;1"
+              calcMode="spline"
+              keySplines=".02 .2 .3 .02"
+              fill="freeze">
+          <mpath xlink:href="#motionPath"/>
+      </animateMotion>
+      <animateMotion
+              xlink:href="#circle3"
+              dur="3s"
+              begin="0.3s; pause3.end"
+              keyTimes="0;1"
+              calcMode="spline"
+              id="myanimcircle3"
+              keySplines=".02 .2 .3 .02"
+              fill="freeze">
+          <mpath xlink:href="#motionPath"/>
+      </animateMotion>
+      <animateMotion
+              xlink:href="#circle4"
+              dur="3s"
+              begin="0.4s; pause4.end"
+              keyTimes="0;1"
+              calcMode="spline"
+              id="myanimcircle4"
+              keySplines=".02 .2 .3 .02"
+              fill="freeze">
+          <mpath xlink:href="#motionPath"/>
+      </animateMotion>
+      <animateMotion
+              id="myanimcircle5"
+              xlink:href="#circle5"
+              dur="3s"
+              begin=".5s; pause5.end"
+              keyTimes="0;1"
+              calcMode="spline"
+              keySplines=".02 .2 .3 .02"
+              fill="freeze">
+          <mpath xlink:href="#motionPath"/>
+      </animateMotion>
+
+
+      <animate
+              xlink:href="#circle1"
+              attributeName="opacity"
+              from="1"
+              to="0"
+              dur="3s"
+              begin="myanimcircle1.begin"
+              values="0; 0.2; 0.5; 0.7; 1; 0.7; 0.5; 0.2; 0;"
+              keyTimes="0; 0.001; 0.01; 0.15; 0.2; 0.9; 0.91; 0.92; 1"
+              fill="freeze"/>
+
+      <animate
+              xlink:href="#circle2"
+              attributeName="opacity"
+              from="1"
+              to="0"
+              dur="3.05s"
+              begin="myanimcircle2.begin"
+              values="0; 0.2; 0.5; 0.7; 1; 0.7; 0.5; 0.2; 0;"
+              keyTimes="0; 0.001; 0.01; 0.15; 0.2; 0.9; 0.91; 0.92; 1"
+              fill="freeze"/>
+
+      <animate
+              xlink:href="#circle3"
+              attributeName="opacity"
+              from="1"
+              to="0"
+              dur="3.05s"
+              begin="myanimcircle3.begin"
+              values="0; 0.2; 0.5; 0.7; 1; 0.7; 0.5; 0.2; 0;"
+              keyTimes="0; 0.001; 0.01; 0.15; 0.2; 0.9; 0.91; 0.92; 1"
+              fill="freeze"/>
+
+      <animate
+              xlink:href="#circle4"
+              attributeName="opacity"
+              from="1"
+              to="0"
+              dur="3.05s"
+              begin="myanimcircle4.begin"
+              values="0; 0.2; 0.5; 0.7; 1; 0.7; 0.5; 0.2; 0;"
+              keyTimes="0; 0.001; 0.01; 0.15; 0.2; 0.9; 0.91; 0.92; 1"
+              fill="freeze"/>
+
+      <animate
+              xlink:href="#circle5"
+              attributeName="opacity"
+              from="1"
+              to="0"
+              dur="3.05s"
+              begin="myanimcircle5.begin"
+              values="0; 0.2; 0.5; 0.7; 1; 0.7; 0.5; 0.2; 0;"
+              keyTimes="0; 0.001; 0.01; 0.15; 0.2; 0.9; 0.91; 0.92; 1"
+              fill="freeze"/>
+
+      <animateTransform begin="myanimcircle5.end" id="pause5" dur="1s" type="translate" attributeType="XML"
+                        attributeName="transform"/>
+      <animateTransform begin="myanimcircle4.end" id="pause4" dur="1s" type="translate" attributeType="XML"
+                        attributeName="transform"/>
+      <animateTransform begin="myanimcircle3.end" id="pause3" dur="1s" type="translate" attributeType="XML"
+                        attributeName="transform"/>
+      <animateTransform begin="myanimcircle2.end" id="pause2" dur="1s" type="translate" attributeType="XML"
+                        attributeName="transform"/>
+      <animateTransform begin="myanimcircle1.end" id="pause1" dur="1s" type="translate" attributeType="XML"
+                        attributeName="transform"/>
+
+  </svg>
