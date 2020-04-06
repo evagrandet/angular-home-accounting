@@ -1,50 +1,20 @@
-<article class="content">
-    <div class="title-block">
-        <h3 class="title">
-            <a href="#"><i class="fa fa-arrow-left"></i></a>
-            Страница записи № 5343
-            <span class="sparkline bar"></span>
+<article class="modal-content modal">
+    <div class="modal__inner">
+        <h3 class="modal__title">
+            Запись #{{ action.id }}
         </h3>
-        </div>
-        <section class="section">
-        <div class="row">
-        <div class="col-xs-6 col-xs-offset-3">
-                            <div class="card card-success">
-                                <div class="card-header">
-                                    <div class="header-block">
-                                        <p class="title">Доход</p>
-                                    </div>
-                                </div>
-                                <div class="card-block">
-                                    <ul>
-                                        <li>Сумма: <strong>44 444.44 P</strong></li>
-                                        <li>Категория: <strong>Название категории</strong></li>
-                                    </ul>
-                                </div>
-                                <div class="card-footer">12.12.2017</div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="section">
-                    <div class="row">
-                        <div class="col-xs-6 col-xs-offset-3">
-                            <div class="card card-danger">
-                                <div class="card-header">
-                                    <div class="header-block">
-                                        <p class="title">Расход</p>
-                                    </div>
-                                </div>
-                                <div class="card-block">
-                                    <ul>
-                                        <li>Сумма: <strong>44 444.44 P</strong></li>
-                                        <li>Категория: <strong>Название категории</strong></li>
-                                    </ul>
-                                </div>
-                                <div class="card-footer">12.12.2017</div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+        <button class="modal__close" (click)="modalInstance.close()" title="Закрыть"></button>
+        <section class="modal__card">
+            <p class="modal__card-title" [ngClass]="{'modal__card-title--income' : action.type === 'income'}">
+                {{ action.type === 'income' ? 'Доход' : 'Расход' }}
+            </p>
+            <ul class="modal__list">
+                <li>Сумма: <strong> {{ action.amount }} &#8364;</strong></li>
+                <li>Категория: <strong> {{ action.categoryName }} </strong></li>
+                <li>Комментарий: <strong> {{ action.description }} </strong></li>
+            </ul>
+            <p> {{ action.date }} </p>
+            <button class="card__form-btn" (click)="modalInstance.close()">Понятно</button>
+        </section>
+    </div>
 </article>
