@@ -1,0 +1,18 @@
+@import '../../../../assets/style/helpers';
+@import '../../../../assets/style/common/modal';
+@import '../../../../assets/style/common/card';
+.modal {
+    &__card {
+        margin: 30px auto;
+        text-align: center;
+    }
+    &__list {
+        @include ul-reset();
+    }
+    &__card-title {
+        border-bottom: 2px solid $error_color;
+        &--income {
+            border-bottom: 2px solid $success_color;
+        }
+    }
+}
