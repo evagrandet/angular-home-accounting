@@ -37,6 +37,8 @@ export class EditCategoryComponent implements OnInit {
     }
 
     onCategoryChanged() {
-        this.currentCategory = this.categories.find((c: Category) => c.id == this.currentCategoryId);
+        this.currentCategory = this.categories.find((category: Category) => {
+            return category.id === this.currentCategoryId;
+        })!;
     }
 }
