@@ -33,7 +33,7 @@
                     <span *ngIf="action.type === 'income'">Доход</span>
                 </td>
                 <td class="card__table-cell">
-                    <a [routerLink]="['/system/history', action.id]" class="card__form-btn">Открыть</a>
+                    <button class="card__form-btn" (click)="openDetail(action)">Открыть</button>
                 </td>
             </tr>
         </tbody>
