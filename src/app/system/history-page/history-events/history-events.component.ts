@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Category } from 'app/shared/models/category';
 import { Action } from 'app/shared/models/action';
+import { ModalService } from 'app/shared/modal/modal.service';
+import { HistoryDetailComponent } from '../history-detail/history-detail.component';
 
 @Component({
     selector: 'app-history-events',
@@ -11,15 +13,14 @@ export class HistoryEventsComponent implements OnInit {
     @Input() categories: Category[];
     @Input() actions: Action[];
     searchValue = '';
-    searchPlaceholder = 'Сумма';
+    searchPlaceholder: string = 'Сумма';
     searchField = 'amount';
 
-    constructor() {}
+    constructor(private modalService: ModalService) {}
 
     ngOnInit() {
-        console.log(this.actions);
         this.actions.forEach((action: Action) => {
-            action.categoryName = this.categories.find((category: Category) => category.id === action.category)['name'];
+            action.categoryName = this.categories.find((category: Category) => category.id === action.category).name;
         });
     }
     selectOption(option: string) {
@@ -31,5 +32,8 @@ export class HistoryEventsComponent implements OnInit {
         };
         this.searchPlaceholder = namesMap[option];
         this.searchField = option;
+    }
+    openDetail(action: Action) {
+        this.modalService.open(HistoryDetailComponent, action);
     }
 }
